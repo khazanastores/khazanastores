@@ -1,0 +1,896 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room Composer — Kave</title>
+  <meta name="description" content="Design your room with scale-accurate floor planning. Drag real furniture from our catalog, visualize in 2.5D, and export a professional PDF spec sheet.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+</head>
+<body class="tft-rc-body tft-redesign-layout">
+
+      <!-- TFT SITE HEADER SYSTEM -->
+    <header id="wp-block-tft-site-header" class="tft-header">
+      <!-- Row 1: Top Bar -->
+      <div class="tft-header__topbar">
+        <div class="tft-header__topbar-container">
+          <div class="tft-header__topbar-shipping">
+            <svg class="tft-header__topbar-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+            <span>FREE SHIPPING ON ALL ORDERS OVER $500</span>
+          </div>
+          <div class="tft-header__topbar-right">
+            <a href="shop-rooms.html" class="tft-header__topbar-track">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-header__topbar-right-icon">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Track Order</span>
+            </a>
+            <span class="tft-header__topbar-divider">|</span>
+            <div class="tft-header__topbar-socials">
+              <a href="https://instagram.com" target="_blank" rel="noopener" class="tft-header__topbar-social-link" aria-label="Instagram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="https://pinterest.com" target="_blank" rel="noopener" class="tft-header__topbar-social-link" aria-label="Pinterest">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.27 2.68 7.91 6.46 9.31-.09-.8-.17-2.02.03-2.9.19-.8 1.25-5.27 1.25-5.27s-.32-.64-.32-1.58c0-1.48.86-2.59 1.93-2.59.91 0 1.35.68 1.35 1.5 0 .91-.58 2.28-.88 3.55-.25 1.06.53 1.92 1.58 1.92 1.9 0 3.36-2 3.36-4.9 0-2.56-1.84-4.35-4.47-4.35-3.05 0-4.84 2.29-4.84 4.65 0 .92.35 1.91.8 2.46.09.11.1.2.07.31-.08.33-.26 1.05-.29 1.19-.04.16-.14.2-.31.12-1.16-.54-1.88-2.23-1.88-3.59 0-2.93 2.13-5.61 6.13-5.61 3.22 0 5.72 2.29 5.72 5.36 0 3.2-2.02 5.78-4.82 5.78-.94 0-1.83-.49-2.13-1.07l-.58 2.22c-.21.81-.78 1.83-1.16 2.46C10.05 21.76 11.01 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"></path></svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener" class="tft-header__topbar-social-link" aria-label="Facebook">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Main Search & Action Bar -->
+      <div class="tft-header__main">
+        <div class="tft-header__main-container">
+          <!-- Logo -->
+          <a href="index.html" class="tft-header__logo-group" aria-label="Go to Home">
+            <div class="tft-header__logo-arch">
+              <img src="assets/img/logo-symbol.png" alt="Kave Home Arch Symbol" width="54" height="68" loading="lazy">
+            </div>
+            <div class="tft-header__logo-text">
+              <span class="tft-header__logo-brand">Kave</span>
+              <span class="tft-header__logo-tagline">NATURAL LIVING</span>
+            </div>
+          </a>
+
+          <!-- Large Rounded Search Capsule -->
+          <div class="tft-header__search-capsule">
+            <form action="shop.html" method="get" class="tft-header__search-form">
+              <input type="text" name="s" class="tft-header__search-input" placeholder="Search for furniture, rooms, inspiration..." aria-label="Search Catalog">
+              <button type="submit" class="tft-header__search-btn" aria-label="Submit Search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="tft-header__quick-actions">
+            <!-- Favorites -->
+            <a href="shop.html?wishlist=true" class="tft-header__action-item tft-header__action-item--wishlist" aria-label="View Favorites">
+              <div class="tft-header__action-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span class="tft-header__action-badge tft-header__action-badge--wishlist">3</span>
+              </div>
+              <span class="tft-header__action-label">Favorites</span>
+            </a>
+
+            <!-- Account -->
+            <a href="about.html" class="tft-header__action-item tft-header__action-item--account" aria-label="My Account">
+              <div class="tft-header__action-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <span class="tft-header__action-label">Account</span>
+            </a>
+
+            <!-- Cart -->
+            <a href="#" class="tft-header__action-item tft-header__action-item--cart fur-header__nav-btn--cart" id="fur-cart-trigger" aria-label="View Cart">
+              <div class="tft-header__action-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span class="tft-header__action-badge fur-sidebar__cart-count fur-header__cart-count">2</span>
+              </div>
+              <span class="tft-header__action-label">Cart</span>
+            </a>
+
+            <!-- Mobile Hamburger (Hidden on Desktop) -->
+            <button class="tft-header__hamburger-btn" id="fur-menu-toggle-mobile" aria-expanded="false" aria-label="Toggle Menu">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Categories & Curation Row -->
+      <div class="tft-header__nav-bar">
+        <div class="tft-header__nav-bar-container">
+          <nav class="tft-header__subnav" aria-label="Category Navigation">
+            <ul class="tft-header__subnav-list">
+
+              <!-- ═══════════════ SHOP ═══════════════ -->
+              <li class="tft-header__subnav-item tft-mega--has-dropdown" id="tft-mega-shop">
+                <button class="tft-header__subnav-link tft-mega__trigger" aria-haspopup="true" aria-expanded="false" aria-controls="tft-mega-panel-shop">
+                  <span class="tft-header__subnav-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                  </span>
+                  <span class="tft-header__subnav-text">
+                    <span class="tft-header__subnav-title">SHOP</span>
+                    <span class="tft-header__subnav-desc">Furniture &amp; Decor</span>
+                  </span>
+                  <svg class="tft-mega__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="tft-mega__panel" id="tft-mega-panel-shop" role="region" aria-label="Shop navigation">
+                  <div class="tft-mega__panel-inner">
+                    <div class="tft-mega__col">
+                      <p class="tft-mega__col-heading">Shop Layouts</p>
+                      <a href="shop.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Classic Grid Shop</span><span class="tft-mega__link-desc">Standard 3-col product grid</span></span></a>
+                      <a href="shop-editorial.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Editorial Shop</span><span class="tft-mega__link-desc">Magazine-style mixed layout</span></span></a>
+                      <a href="shop-split.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Split View Shop</span><span class="tft-mega__link-desc">Sidebar + product detail</span></span></a>
+                    </div>
+                    <div class="tft-mega__col">
+                      <p class="tft-mega__col-heading">Curated Rooms</p>
+                      <a href="shop-rooms.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Room Shop</span><span class="tft-mega__link-desc">Shop by living space</span></span></a>
+                      <a href="shop-complete-room.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><rect x="7" y="7" width="10" height="10"></rect></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Complete Room</span><span class="tft-mega__link-desc">Buy the whole curated look</span></span></a>
+                      <a href="shop-home.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Shop the Home</span><span class="tft-mega__link-desc">Full home styling sets</span></span></a>
+                      <a href="shop-materials.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Material Shop</span><span class="tft-mega__link-desc">Filter by texture &amp; fabric</span></span></a>
+                    </div>
+                    <div class="tft-mega__col">
+                      <p class="tft-mega__col-heading">Purchase</p>
+                      <a href="product-single.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Product Detail</span><span class="tft-mega__link-desc">Premium single-item view</span></span></a>
+                      <a href="checkout.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Checkout Flow</span><span class="tft-mega__link-desc">Multi-step order process</span></span></a>
+                    </div>
+                    <div class="tft-mega__col tft-mega__col--feature">
+                      <div class="tft-mega__feature-card">
+                        <p class="tft-mega__feature-label">NEW IN &mdash; SPRING 2026</p>
+                        <p class="tft-mega__feature-title">Spring Collection</p>
+                        <p class="tft-mega__feature-desc">30% off boucle sofas &amp; natural oak pieces this season.</p>
+                        <a href="shop.html" class="tft-mega__feature-btn">Shop the Sale &rarr;</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- ═══════════════ ROOMS ═══════════════ -->
+              <li class="tft-header__subnav-item tft-mega--has-dropdown" id="tft-mega-rooms">
+                <button class="tft-header__subnav-link tft-mega__trigger" aria-haspopup="true" aria-expanded="false" aria-controls="tft-mega-panel-rooms">
+                  <span class="tft-header__subnav-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10V18a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V10"></path><path d="M2 9a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V9z"></path><path d="M6 8V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"></path></svg>
+                  </span>
+                  <span class="tft-header__subnav-text">
+                    <span class="tft-header__subnav-title">ROOMS</span>
+                    <span class="tft-header__subnav-desc">Design by Space</span>
+                  </span>
+                  <svg class="tft-mega__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="tft-mega__panel" id="tft-mega-panel-rooms" role="region" aria-label="Rooms navigation">
+                  <div class="tft-mega__panel-inner">
+                    <div class="tft-mega__col">
+                      <p class="tft-mega__col-heading">Homepage Variants</p>
+                      <a href="index.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">01. Minimalist Flagship</span><span class="tft-mega__link-desc">Split-hero, curated sections</span></span></a>
+                      <a href="index-2.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">02. Classic Feed</span><span class="tft-mega__link-desc">Editorial style homepage</span></span></a>
+                      <a href="index-3.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">03. Slow Craft Lookbook</span><span class="tft-mega__link-desc">Artisan &amp; material stories</span></span></a>
+                      <a href="index-4.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">04. Editorial Journal</span><span class="tft-mega__link-desc">Design stories + journal</span></span></a>
+                      <a href="index-5.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">05. Concept Atelier</span><span class="tft-mega__link-desc">Luxury concept showcase</span></span></a>
+                      <a href="index-6.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">06. Room Planner</span><span class="tft-mega__link-desc">3D interactive space tool</span></span></a>
+                    </div>
+                    <div class="tft-mega__col">
+                      <p class="tft-mega__col-heading">Shop by Room</p>
+                      <a href="shop-rooms.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Living &amp; Dining</span><span class="tft-mega__link-desc">Sofas, chairs &amp; tables</span></span></a>
+                      <a href="shop-complete-room.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><rect x="7" y="7" width="10" height="10"></rect></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Complete Rooms</span><span class="tft-mega__link-desc">Full curated room bundles</span></span></a>
+                      <a href="index-6.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">3D Space Planner</span><span class="tft-mega__link-desc">Design your room in real-time</span></span></a>
+                    </div>
+                    <div class="tft-mega__col tft-mega__col--feature">
+                      <div class="tft-mega__feature-card tft-mega__feature-card--dark">
+                        <p class="tft-mega__feature-label">INTERACTIVE TOOL</p>
+                        <p class="tft-mega__feature-title">Design Your Space</p>
+                        <p class="tft-mega__feature-desc">Use our 3D Planner to visualize your dream room before you buy.</p>
+                        <a href="index-6.html" class="tft-mega__feature-btn">Launch Planner &rarr;</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- ═══════════════ INSPIRATION ═══════════════ -->
+              <li class="tft-header__subnav-item tft-mega--has-dropdown" id="tft-mega-inspiration">
+                <button class="tft-header__subnav-link tft-mega__trigger" aria-haspopup="true" aria-expanded="false" aria-controls="tft-mega-panel-inspiration">
+                  <span class="tft-header__subnav-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22c1.25-6.7 5-11.8 10.7-14.8C16.2 5.3 20 5.3 22 5c-.3 2-1 5.8-3.2 9.3-3 4.7-8.1 8-14.8 7.7Z"></path><path d="M12 7.2v14.8"></path></svg>
+                  </span>
+                  <span class="tft-header__subnav-text">
+                    <span class="tft-header__subnav-title">INSPIRATION</span>
+                    <span class="tft-header__subnav-desc">Ideas &amp; Stories</span>
+                  </span>
+                  <svg class="tft-mega__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="tft-mega__panel" id="tft-mega-panel-inspiration" role="region" aria-label="Inspiration navigation">
+                  <div class="tft-mega__panel-inner">
+                    <div class="tft-mega__col">
+                      <p class="tft-mega__col-heading">Editorial Journal</p>
+                      <a href="blog.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Journal Index</span><span class="tft-mega__link-desc">All design articles &amp; stories</span></span></a>
+                      <a href="blog-post.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Single Post View</span><span class="tft-mega__link-desc">Long-form article template</span></span></a>
+                      <a href="index-4.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Editorial Home</span><span class="tft-mega__link-desc">Journal-style homepage</span></span></a>
+                    </div>
+                    <div class="tft-mega__col">
+                      <p class="tft-mega__col-heading">Lookbooks &amp; Styles</p>
+                      <a href="index-3.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Slow Craft Lookbook</span><span class="tft-mega__link-desc">Handmade &amp; natural materials</span></span></a>
+                      <a href="shop-editorial.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Editorial Shop</span><span class="tft-mega__link-desc">Styled scene shopping</span></span></a>
+                      <a href="shop-materials.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Material Stories</span><span class="tft-mega__link-desc">Sourcing &amp; craft detail</span></span></a>
+                    </div>
+                    <div class="tft-mega__col tft-mega__col--feature">
+                      <div class="tft-mega__feature-card">
+                        <p class="tft-mega__feature-label">LATEST ARTICLE</p>
+                        <p class="tft-mega__feature-title">Japandi Style Guide 2026</p>
+                        <p class="tft-mega__feature-desc">Wabi-sabi meets Nordic restraint &mdash; how to achieve the look.</p>
+                        <a href="blog-post.html" class="tft-mega__feature-btn">Read Article &rarr;</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- ═══════════════ THE STUDIO ═══════════════ -->
+              <li class="tft-header__subnav-item tft-mega--has-dropdown" id="tft-mega-studio">
+                <button class="tft-header__subnav-link tft-mega__trigger" aria-haspopup="true" aria-expanded="false" aria-controls="tft-mega-panel-studio">
+                  <span class="tft-header__subnav-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                  </span>
+                  <span class="tft-header__subnav-text">
+                    <span class="tft-header__subnav-title">THE STUDIO</span>
+                    <span class="tft-header__subnav-desc">Our Design Process</span>
+                  </span>
+                  <svg class="tft-mega__chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="tft-mega__panel" id="tft-mega-panel-studio" role="region" aria-label="Studio navigation">
+                  <div class="tft-mega__panel-inner">
+                    <div class="tft-mega__col">
+                      <p class="tft-mega__col-heading">About Kave</p>
+                      <a href="about.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Our Story</span><span class="tft-mega__link-desc">Brand heritage &amp; philosophy</span></span></a>
+                      
+                      <a href="contact.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Contact Atelier</span><span class="tft-mega__link-desc">Speak with our design team</span></span></a>
+                    </div>
+                    <div class="tft-mega__col">
+                      <p class="tft-mega__col-heading">Services</p>
+                      <a href="consultation.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Free Consultation</span><span class="tft-mega__link-desc">1-on-1 virtual styling session</span></span></a>
+                      <a href="index-6.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">3D Room Planner</span><span class="tft-mega__link-desc">Design before you commit</span></span></a>
+                      <a href="documentation.html" class="tft-mega__link"><span class="tft-mega__link-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tft-mega__link-icon"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"></path></svg></span><span class="tft-mega__link-body"><span class="tft-mega__link-title">Documentation</span><span class="tft-mega__link-desc">Developer &amp; WP guide</span></span></a>
+                    </div>
+                    <div class="tft-mega__col tft-mega__col--feature">
+                      <div class="tft-mega__feature-card tft-mega__feature-card--dark">
+                        <p class="tft-mega__feature-label">COMPLIMENTARY</p>
+                        <p class="tft-mega__feature-title">Book a Consultation</p>
+                        <p class="tft-mega__feature-desc">Our designers help you furnish any space &mdash; virtually, for free.</p>
+                        <a href="consultation.html" class="tft-mega__feature-btn">Book Now &rarr;</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- ═══════════════ SALE ═══════════════ -->
+              <li class="tft-header__subnav-item">
+                <a href="shop.html?sale=true" class="tft-header__subnav-link tft-header__subnav-link--sale">
+                  <span class="tft-header__subnav-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                  </span>
+                  <span class="tft-header__subnav-text">
+                    <span class="tft-header__subnav-title">SALE</span>
+                    <span class="tft-header__subnav-desc">Special Offers</span>
+                  </span>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+
+          <!-- Right side CTA: Design Your Space -->
+          <a href="consultation.html" class="tft-header__nav-cta">
+            <div class="tft-header__nav-cta-thumb">
+              <img src="assets/img/fur_prod_armchair_green_thumb.png" alt="Green armchair thumb" width="36" height="36" loading="lazy">
+            </div>
+            <div class="tft-header__nav-cta-text">
+              <span class="tft-header__nav-cta-title">Design Your Space</span>
+              <span class="tft-header__nav-cta-subtitle">Book a free consultation</span>
+            </div>
+            <div class="tft-header__nav-cta-arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </header>
+
+  <!-- TFT MOBILE NAVIGATION DRAWER -->
+  <nav class="tft-mobile-drawer" id="tft-mobile-drawer" aria-label="Mobile Navigation">
+    <div class="tft-mobile-drawer__header">
+      <a href="index.html" aria-label="Go to Home" style="display: flex; align-items: center; text-decoration: none;">
+        <img src="assets/img/main-logo.png" alt="Kave Home" width="120" height="40" loading="lazy" style="height: auto; max-height: 40px; width: auto;">
+      </a>
+      <button class="tft-mobile-drawer__close" id="tft-mobile-drawer-close" aria-label="Close Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="tft-mobile-drawer__search">
+      <form action="shop.html" method="get" class="tft-mobile-drawer__search-form">
+        <input type="text" name="s" class="tft-mobile-drawer__search-input" placeholder="Search for furniture..." aria-label="Search Catalog">
+        <button type="submit" class="tft-mobile-drawer__search-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </form>
+    </div>
+
+    <nav class="tft-mobile-drawer__nav">
+      <!-- Shop Category -->
+      <button class="tft-mobile-drawer__link tft-nav-dropdown__btn" aria-expanded="false">
+        <span class="tft-mobile-drawer__link-text">Shop</span>
+        <svg class="tft-mobile-drawer__chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="tft-nav-dropdown__menu tft-mobile-drawer__submenu">
+        <a href="shop.html" class="tft-mobile-drawer__sublink">Classic Grid Shop</a>
+        <a href="shop-editorial.html" class="tft-mobile-drawer__sublink">Editorial Shop</a>
+        <a href="shop-rooms.html" class="tft-mobile-drawer__sublink">Room Shop</a>
+        <a href="shop-complete-room.html" class="tft-mobile-drawer__sublink">Complete Room</a>
+        <a href="shop-materials.html" class="tft-mobile-drawer__sublink">Material Shop</a>
+      </div>
+
+      <!-- Rooms Category -->
+      <button class="tft-mobile-drawer__link tft-nav-dropdown__btn" aria-expanded="false">
+        <span class="tft-mobile-drawer__link-text">Rooms</span>
+        <svg class="tft-mobile-drawer__chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="tft-nav-dropdown__menu tft-mobile-drawer__submenu">
+        <a href="index.html" class="tft-mobile-drawer__sublink">Minimalist Flagship</a>
+        <a href="index-2.html" class="tft-mobile-drawer__sublink">Classic Feed</a>
+        <a href="index-3.html" class="tft-mobile-drawer__sublink">Slow Craft Lookbook</a>
+        <a href="index-4.html" class="tft-mobile-drawer__sublink">Editorial Journal</a>
+        <a href="index-5.html" class="tft-mobile-drawer__sublink">Concept Atelier</a>
+        <a href="index-6.html" class="tft-mobile-drawer__sublink">Room Planner Tool</a>
+      </div>
+
+      <!-- Inspiration Category -->
+      <button class="tft-mobile-drawer__link tft-nav-dropdown__btn" aria-expanded="false">
+        <span class="tft-mobile-drawer__link-text">Inspiration</span>
+        <svg class="tft-mobile-drawer__chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="tft-nav-dropdown__menu tft-mobile-drawer__submenu">
+        <a href="blog.html" class="tft-mobile-drawer__sublink">Editorial Journal</a>
+        <a href="blog-post.html" class="tft-mobile-drawer__sublink">Single Journal Post</a>
+        <a href="shop-materials.html" class="tft-mobile-drawer__sublink">Material Stories</a>
+      </div>
+
+      <!-- The Studio Category -->
+      <button class="tft-mobile-drawer__link tft-nav-dropdown__btn" aria-expanded="false">
+        <span class="tft-mobile-drawer__link-text">The Studio</span>
+        <svg class="tft-mobile-drawer__chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="tft-nav-dropdown__menu tft-mobile-drawer__submenu">
+        <a href="about.html" class="tft-mobile-drawer__sublink">Our Story</a>
+        
+        <a href="consultation.html" class="tft-mobile-drawer__sublink">Design Consultation</a>
+        <a href="contact.html" class="tft-mobile-drawer__sublink">Contact Atelier</a>
+        <a href="documentation.html" class="tft-mobile-drawer__sublink">Template Documentation</a>
+      </div>
+    </nav>
+
+    <div class="tft-mobile-drawer__footer">
+      <div class="tft-mobile-drawer__socials">
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="tft-mobile-drawer__social-link" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="https://pinterest.com" target="_blank" rel="noopener" class="tft-mobile-drawer__social-link" aria-label="Pinterest">
+          <svg width="18" height="18" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true" style="display: inline-block; vertical-align: middle;"><path d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"/></svg>
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" class="tft-mobile-drawer__social-link" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+      </div>
+      <p class="tft-drawer__footer-tagline">Crafted with care since 2008</p>
+      <div class="tft-drawer__footer-links">
+        <a href="about.html" class="tft-drawer__footer-link">About</a>
+        <a href="contact.html" class="tft-drawer__footer-link">Contact</a>
+        <a href="blog.html" class="tft-drawer__footer-link">Journal</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LOADER -->
+  <div class="tft-rc-loader" id="tft-rc-loader" aria-live="polite">
+    <div class="tft-rc-loader__blueprint">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" class="tft-rc-loader__svg">
+        <rect x="8" y="8" width="48" height="48" rx="4" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <rect x="18" y="18" width="14" height="14" rx="2" fill="currentColor" opacity="0.4"/>
+        <rect x="36" y="20" width="10" height="8" rx="2" fill="currentColor" opacity="0.25"/>
+        <rect x="18" y="38" width="28" height="10" rx="2" fill="currentColor" opacity="0.2"/>
+        <line x1="8" y1="32" x2="56" y2="32" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+        <line x1="32" y1="8" x2="32" y2="56" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+      </svg>
+    </div>
+    <span class="tft-rc-loader__text">Loading Room Composer</span>
+    <div class="tft-rc-loader__bar"><div class="tft-rc-loader__bar-fill"></div></div>
+  </div>
+
+  <!-- PRINT VIEW — only shown during window.print() -->
+  <div class="tft-rc-print-view" id="tft-rc-print-view">
+    <div class="tft-rc-print-view__header">
+      <div class="tft-rc-print-view__logo" style="display: flex; align-items: center;"><img src="assets/img/main-logo.png" alt="Kave Home" width="120" height="53" class="tft-footer__logo-img" loading="lazy"></div>
+      <div>
+        <h1 class="tft-rc-print-view__title">Room Specification</h1>
+        <p class="tft-rc-print-view__meta" id="tft-rc-print-meta"></p>
+      </div>
+    </div>
+    <div class="tft-rc-print-view__diagram" id="tft-rc-print-diagram"></div>
+    <div class="tft-rc-print-view__room-info" id="tft-rc-print-room-info"></div>
+    <table class="tft-rc-print-view__table" id="tft-rc-print-table">
+      <thead>
+        <tr><th>Item</th><th>Dimensions</th><th>Unit Price</th><th>Qty</th><th>Subtotal</th></tr>
+      </thead>
+      <tbody id="tft-rc-print-rows"></tbody>
+      <tfoot><tr class="tft-rc-print-view__total-row"><td colspan="4">Total</td><td id="tft-rc-print-total"></td></tr></tfoot>
+    </table>
+    <p class="tft-rc-print-view__footer">Generated with Room Composer &bull; Furniture Shop &bull; <span id="tft-rc-print-date"></span></p>
+  </div>
+
+  <!-- MAIN APP -->
+  <div class="tft-rc-app" id="tft-rc-app">
+
+    <!-- TFT MOBILE DESKTOP OVERLAY -->
+    <section class="tft-rc-desktop-overlay" id="wp-block-rc-desktop-overlay">
+      <div class="tft-rc-desktop-overlay__card">
+        <div class="tft-rc-desktop-overlay__icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h2 class="tft-rc-desktop-overlay__title">Optimized for Desktop</h2>
+        <p class="tft-rc-desktop-overlay__desc">
+          Our Room Planner tool is optimized for larger displays. Please open this page on a tablet or desktop computer to design, arrange, and compose your space in 2D and 3D.
+        </p>
+        <a href="index.html" class="tft-rc-desktop-overlay__btn">Return to Storefront</a>
+      </div>
+    </section>
+    <!-- /TFT MOBILE DESKTOP OVERLAY -->
+
+    <!-- TOP HEADER BAR (Merged with main site header in mockup) -->
+    <!-- Removed secondary tft-rc-header to let the main header sit naturally on top -->
+
+    <!-- THREE-COLUMN LAYOUT -->
+    <main class="tft-rc-main" id="wp-block-room-composer">
+
+      <!-- LEFT PANEL: Room Setup -->
+      <aside class="tft-rc-panel tft-rc-panel--left" id="wp-block-room-setup">
+        <button class="tft-rc-panel-collapse" id="tft-rc-left-collapse" aria-label="Toggle left panel" title="Toggle panel">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        
+        <section id="wp-block-rc-presets" class="tft-rc-panel__section">
+          <h2 class="tft-rc-panel__heading">Room Presets</h2>
+          <div class="tft-rc-presets" id="tft-rc-presets"></div>
+        </section>
+
+        <section id="wp-block-rc-dimensions" class="tft-rc-panel__section">
+          <h2 class="tft-rc-panel__heading">Custom Dimensions</h2>
+          <div class="tft-rc-field-row">
+            <div class="tft-rc-field">
+              <label class="tft-rc-label" for="tft-rc-width">Width (m)</label>
+              <div class="tft-rc-dim-wrap">
+                <button type="button" class="tft-rc-dim-btn" data-tft-click="rc-step-down" data-tft-target="tft-rc-width">&#8722;</button>
+                <input class="tft-rc-input" type="number" id="tft-rc-width" value="6.0" min="2" max="30" step="0.5" aria-label="Room width" readonly>
+                <button type="button" class="tft-rc-dim-btn" data-tft-click="rc-step-up" data-tft-target="tft-rc-width">&#43;</button>
+              </div>
+            </div>
+            <div class="tft-rc-field">
+              <label class="tft-rc-label" for="tft-rc-length">Length (m)</label>
+              <div class="tft-rc-dim-wrap">
+                <button type="button" class="tft-rc-dim-btn" data-tft-click="rc-step-down" data-tft-target="tft-rc-length">&#8722;</button>
+                <input class="tft-rc-input" type="number" id="tft-rc-length" value="4.5" min="2" max="30" step="0.5" aria-label="Room length" readonly>
+                <button type="button" class="tft-rc-dim-btn" data-tft-click="rc-step-up" data-tft-target="tft-rc-length">&#43;</button>
+              </div>
+            </div>
+          </div>
+          <button class="tft-rc-btn tft-rc-btn--full tft-rc-btn--primary" id="tft-rc-draw-btn">Draw Room</button>
+        </section>
+
+        <section id="wp-block-rc-structure" class="tft-rc-panel__section">
+          <h2 class="tft-rc-panel__heading">Room Structure</h2>
+          <div class="tft-rc-structure-tabs">
+            <button type="button" class="tft-rc-structure-tab">Walls</button>
+            <button type="button" class="tft-rc-structure-tab tft-rc-structure-tab--active">Openings</button>
+            <button type="button" class="tft-rc-structure-tab">Furniture</button>
+            <button type="button" class="tft-rc-structure-tab">Measure</button>
+          </div>
+        </section>
+
+        <section id="wp-block-rc-openings" class="tft-rc-panel__section">
+          <h3 class="tft-rc-panel__subheading">Wall Openings</h3>
+          <p class="tft-rc-panel__instruction">Add doors, windows or archways</p>
+          <div class="tft-rc-openings-grid">
+            <button type="button" class="tft-rc-opening-btn tft-rc-opening-btn--active">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 3h14v18H5zM5 12h14"/></svg>
+              <span>Door</span>
+            </button>
+            <button type="button" class="tft-rc-opening-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 12h18"/></svg>
+              <span>Window</span>
+            </button>
+            <button type="button" class="tft-rc-opening-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 21V10a7 7 0 0 1 14 0v11"/></svg>
+              <span>Archway</span>
+            </button>
+          </div>
+        </section>
+
+        <section id="wp-block-rc-selected-opening" class="tft-rc-panel__section">
+          <div class="tft-rc-section-header-row">
+            <h3 class="tft-rc-panel__subheading">Selected Opening</h3>
+            <button type="button" class="tft-rc-icon-btn" aria-label="Delete opening">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg>
+            </button>
+          </div>
+
+          <div class="tft-rc-opening-fields">
+            <div class="tft-rc-field-inline">
+              <label class="tft-rc-label-inline">Type</label>
+              <div class="tft-rc-select-wrap">
+                <select class="tft-rc-select" aria-label="Opening type">
+                  <option selected>Door</option>
+                  <option>Window</option>
+                  <option>Archway</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="tft-rc-field-inline">
+              <label class="tft-rc-label-inline">Wall</label>
+              <div class="tft-rc-select-wrap">
+                <select class="tft-rc-select" aria-label="Target wall">
+                  <option>Left</option>
+                  <option>Right</option>
+                  <option>Top</option>
+                  <option selected>Bottom</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="tft-rc-field-inline">
+              <label class="tft-rc-label-inline">Position</label>
+              <div class="tft-rc-dim-wrap tft-rc-dim-wrap--sm">
+                <button type="button" class="tft-rc-dim-btn tft-rc-dim-btn--sm">&#8722;</button>
+                <input class="tft-rc-input tft-rc-input--sm" type="text" value="2.4 m" readonly aria-label="Opening position">
+                <button type="button" class="tft-rc-dim-btn tft-rc-dim-btn--sm">&#43;</button>
+              </div>
+            </div>
+
+            <div class="tft-rc-field-inline">
+              <label class="tft-rc-label-inline">Width</label>
+              <div class="tft-rc-dim-wrap tft-rc-dim-wrap--sm">
+                <button type="button" class="tft-rc-dim-btn tft-rc-dim-btn--sm">&#8722;</button>
+                <input class="tft-rc-input tft-rc-input--sm" type="text" value="90 cm" readonly aria-label="Opening width">
+                <button type="button" class="tft-rc-dim-btn tft-rc-dim-btn--sm">&#43;</button>
+              </div>
+            </div>
+
+            <div class="tft-rc-field-inline">
+              <label class="tft-rc-label-inline">Swing</label>
+              <div class="tft-rc-seg tft-rc-seg--sm">
+                <button type="button" class="tft-rc-seg__btn tft-rc-seg__btn--sm">Left</button>
+                <button type="button" class="tft-rc-seg__btn tft-rc-seg__btn--sm tft-rc-seg__btn--active">Right</button>
+                <button type="button" class="tft-rc-seg__btn tft-rc-seg__btn--sm">None</button>
+              </div>
+            </div>
+
+            <button type="button" class="tft-rc-btn tft-rc-btn--full tft-rc-btn--secondary tft-rc-btn--add-opening">
+              <span class="tft-rc-btn__plus">&#43;</span> Add Opening
+            </button>
+          </div>
+        </section>
+
+        <section id="wp-block-rc-settings" class="tft-rc-panel__section">
+          <h2 class="tft-rc-panel__heading">Settings</h2>
+          <div class="tft-rc-setting-row">
+            <span class="tft-rc-setting-label">Units</span>
+            <div class="tft-rc-seg" id="tft-rc-unit-seg">
+              <button class="tft-rc-seg__btn tft-rc-seg__btn--active" data-unit="m" id="tft-rc-unit-m">m</button>
+              <button class="tft-rc-seg__btn" data-unit="ft" id="tft-rc-unit-ft">ft</button>
+            </div>
+          </div>
+          <div class="tft-rc-setting-row">
+            <span class="tft-rc-setting-label">Snap to Grid</span>
+            <button class="tft-rc-toggle-btn tft-rc-toggle-btn--on" id="tft-rc-snap-toggle" aria-pressed="true">ON</button>
+          </div>
+        </section>
+        <section class="tft-rc-panel__section" id="tft-rc-item-customization-sec" style="display:none; border-top: 1px dashed var(--fur-border-light); padding-top: 15px; margin-top: 15px;">
+          <h2 class="tft-rc-panel__heading">Item Customization</h2>
+          <div class="tft-rc-dimension-group" style="display:flex; flex-direction:column; gap:12px; margin-top:10px;">
+            <div class="tft-rc-dimension-row" style="display:flex; justify-content:space-between; align-items:center;">
+              <label for="tft-rc-item-w" style="font-size:0.75rem; font-weight:600; color:var(--fur-text-muted);">Width (cm)</label>
+              <input type="number" id="tft-rc-item-w" min="10" max="600" step="5" style="width:70px; padding:4px 8px; border:1px solid var(--fur-border-light); border-radius:var(--fur-radius-sm); font-size:0.8rem; text-align:right;">
+            </div>
+            <div class="tft-rc-dimension-row" style="display:flex; justify-content:space-between; align-items:center;">
+              <label for="tft-rc-item-d" style="font-size:0.75rem; font-weight:600; color:var(--fur-text-muted);">Depth (cm)</label>
+              <input type="number" id="tft-rc-item-d" min="10" max="600" step="5" style="width:70px; padding:4px 8px; border:1px solid var(--fur-border-light); border-radius:var(--fur-radius-sm); font-size:0.8rem; text-align:right;">
+            </div>
+            <div class="tft-rc-dimension-row" style="display:flex; justify-content:space-between; align-items:center;">
+              <label for="tft-rc-item-h" style="font-size:0.75rem; font-weight:600; color:var(--fur-text-muted);">Height (cm)</label>
+              <input type="number" id="tft-rc-item-h" min="1" max="400" step="5" style="width:70px; padding:4px 8px; border:1px solid var(--fur-border-light); border-radius:var(--fur-radius-sm); font-size:0.8rem; text-align:right;">
+            </div>
+            <div class="tft-rc-dimension-row" style="display:flex; flex-direction:column; gap:4px; align-items:stretch;">
+              <label for="tft-rc-item-name" style="font-size:0.75rem; font-weight:600; color:var(--fur-text-muted);">Label Name</label>
+              <input type="text" id="tft-rc-item-name" placeholder="Custom Shape" style="width:100%; padding:6px 10px; border:1px solid var(--fur-border-light); border-radius:var(--fur-radius-sm); font-size:0.8rem;">
+            </div>
+          </div>
+        </section>
+        <section id="wp-block-rc-shortcuts" class="tft-rc-panel__section tft-rc-panel__section--controls">
+          <h2 class="tft-rc-panel__heading">Keyboard Shortcuts</h2>
+          <ul class="tft-rc-shortcuts">
+            <li><kbd>Click</kbd> Select item</li>
+            <li><kbd>R</kbd> Rotate 90°</li>
+            <li><kbd>Del</kbd> Remove item</li>
+            <li><kbd>Esc</kbd> Deselect / Cancel</li>
+            <li><kbd>Scroll</kbd> Zoom canvas</li>
+            <li><kbd>Space</kbd> + drag to pan</li>
+          </ul>
+        </section>
+      </aside>
+      <!-- CENTER: Canvas -->
+      <section class="tft-rc-center" id="wp-block-room-canvas">
+        <h2 class="sr-only">Room canvas</h2>
+        <div class="tft-rc-toolbar" id="tft-rc-toolbar">
+          <div class="tft-rc-toolbar__left">
+            <button class="tft-rc-tool" id="tft-rc-zoom-in" title="Zoom In" aria-label="Zoom in">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </button>
+            <button class="tft-rc-tool" id="tft-rc-zoom-out" title="Zoom Out" aria-label="Zoom out">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            </button>
+            <button class="tft-rc-tool" id="tft-rc-fit-btn" title="Fit room to screen" aria-label="Fit to screen">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+            </button>
+          </div>
+
+          <div class="tft-rc-toolbar__center">
+            <div class="tft-rc-view-btn-group">
+              <button type="button" class="tft-rc-view-btn tft-rc-view-btn--active" id="tft-rc-view-2d">2D</button>
+              <button type="button" class="tft-rc-view-btn" id="tft-rc-view-3d">3D</button>
+            </div>
+            
+            <div class="tft-rc-select-view-wrap">
+              <select class="tft-rc-select-view" id="tft-rc-select-view" aria-label="Select view type">
+                <option selected>Plan View</option>
+                <option>Isometric View</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="tft-rc-toolbar__right">
+            <!-- Hidden view toggle for JS event compatibility -->
+            <button class="tft-rc-tool tft-rc-tool--view" id="tft-rc-view-toggle" aria-label="Toggle view mode" style="display: none;">
+              Plan View
+            </button>
+            <button class="tft-rc-tool" id="tft-rc-rot-left" title="Rotate View Left (Axo Mode)" aria-label="Rotate left" style="display: none;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><polyline points="3 3 3 8 8 8"/></svg>
+            </button>
+            <button class="tft-rc-tool" id="tft-rc-rot-right" title="Rotate View Right (Axo Mode)" aria-label="Rotate right" style="display: none;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><polyline points="21 3 21 8 16 8"/></svg>
+            </button>
+            <button class="tft-rc-tool" id="tft-rc-clear-btn" title="Reset Layout" aria-label="Reset layout">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="tft-rc-canvas-wrap" id="tft-rc-canvas-wrap">
+          <canvas id="tft-rc-canvas" aria-label="Room floor plan canvas"></canvas>
+          <div class="tft-rc-axo-layer" id="tft-rc-axo-layer"></div>
+          <div class="tft-rc-placement-hint" id="tft-rc-placement-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            Click canvas to place &mdash; <kbd>Esc</kbd> to cancel
+          </div>
+        </div>
+
+        <div class="tft-rc-stats" id="tft-rc-stats">
+          <div class="tft-rc-stats__left">
+            <span id="tft-rc-stat-room">No room</span>
+            <span class="tft-rc-stats__sep">&#124;</span>
+            <span id="tft-rc-stat-area">Area: &mdash;</span>
+            <span class="tft-rc-stats__sep">&#124;</span>
+            <span id="tft-rc-stat-coverage">Coverage: &mdash;</span>
+            <span class="tft-rc-stats__sep">&#124;</span>
+            <span id="tft-rc-stat-items">0 items placed</span>
+            <span class="tft-rc-stats__autosave" id="tft-rc-autosave-label"></span>
+          </div>
+          <div class="tft-rc-stats__right">
+            <button class="tft-rc-stats-clear-btn" id="tft-rc-clear-btn-stats" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+              Clear All
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT PANEL: Cart + Catalog -->
+      <aside class="tft-rc-panel tft-rc-panel--right" id="wp-block-room-catalog">
+        <section class="tft-rc-cart" id="tft-rc-cart">
+          <div class="tft-rc-cart__head">
+            <h2 class="tft-rc-panel__heading">Room Layout</h2>
+            <span class="tft-rc-cart__badge" id="tft-rc-cart-count">0</span>
+          </div>
+          <div class="tft-rc-cart__list" id="tft-rc-cart-list">
+            <p class="tft-rc-cart__empty">Place furniture to begin building your room</p>
+          </div>
+          <div class="tft-rc-cart__footer" id="tft-rc-cart-footer">
+            <div class="tft-rc-cart__total-row">
+              <span>Estimated Total</span>
+              <strong id="tft-rc-cart-total">$0.00</strong>
+            </div>
+            <button class="tft-rc-btn tft-rc-btn--primary tft-rc-btn--full" id="tft-rc-addcart-btn">Add All to Cart &rarr;</button>
+          </div>
+        </section>
+
+        <section class="tft-rc-catalog" id="tft-rc-catalog">
+          <h2 class="tft-rc-panel__heading">Furniture Catalog</h2>
+          <div class="tft-rc-catalog__filters" id="tft-rc-cat-filters"></div>
+          <div class="tft-rc-catalog__list" id="tft-rc-catalog-list"></div>
+        </section>
+      </aside>
+
+    </main>
+  </div><!-- /.tft-rc-app -->
+
+  <!-- FLOATING ITEM TOOLBAR (appears above selected item) -->
+  <div class="tft-rc-item-toolbar" id="tft-rc-item-toolbar" role="toolbar" aria-label="Selected item actions">
+    <button class="tft-rc-item-toolbar__btn" id="tft-rc-btn-rotate" title="Rotate 90°">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg> R
+    </button>
+    <button class="tft-rc-item-toolbar__btn" id="tft-rc-btn-info" title="Product details">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Info
+    </button>
+    <button class="tft-rc-item-toolbar__btn tft-rc-item-toolbar__btn--danger" id="tft-rc-btn-delete" title="Remove item">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg> Del
+    </button>
+  </div>
+
+  <!-- PRODUCT DETAIL DRAWER -->
+  <div class="tft-rc-drawer" id="tft-rc-drawer" role="dialog" aria-modal="true" aria-label="Product details">
+    <div class="tft-rc-drawer__body">
+      <button class="tft-rc-drawer__close" id="tft-rc-drawer-close" aria-label="Close">&times;</button>
+      <div id="tft-rc-drawer-content"></div>
+    </div>
+  </div>
+  <div class="tft-rc-overlay" id="tft-rc-overlay"></div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="tft-rc-toast" id="tft-rc-toast" role="status" aria-live="polite"></div>
+
+  <!-- SYSTEM LEVEL: CART DRAWER OVERLAY -->
+  <aside class="fur-cart-overlay" id="fur-cart-drawer" aria-hidden="true" aria-label="Shopping Cart Drawer">
+    <div class="fur-cart-drawer">
+      <div class="fur-cart-drawer__header">
+        <h3>Shopping Cart</h3>
+        <button class="fur-cart-drawer__close" id="fur-cart-close" aria-label="Close Cart">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <div class="fur-cart-drawer__items" id="fur-cart-items-container">
+        <!-- Rendered dynamically via JS -->
+      </div>
+
+      <div class="fur-cart-drawer__footer">
+        <div class="fur-cart-drawer__summary">
+          <span>Subtotal</span>
+          <span class="fur-cart-drawer__subtotal" id="fur-cart-subtotal">$588.00</span>
+        </div>
+        <button class="fur-cart-drawer__checkout-btn">Proceed to Checkout &rarr;</button>
+        <button class="fur-cart-drawer__clear-btn" id="fur-cart-clear">Clear Cart</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- SYSTEM LEVEL: PRODUCT QUICK VIEW MODAL -->
+  <div class="fur-modal-overlay" id="fur-product-modal" aria-hidden="true" role="dialog" aria-label="Product Detail Quick View">
+    <div class="fur-modal">
+      <button class="fur-modal__close" id="fur-modal-close" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="fur-modal__content" id="fur-modal-content-container">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SYSTEM LEVEL: BESPOKE CONSULTATION MODAL -->
+  <div class="fur-modal-overlay" id="fur-consultation-modal" aria-hidden="true" role="dialog" aria-label="Book Design Consultation">
+    <div class="fur-modal fur-modal--consultation">
+      <button class="fur-modal__close" id="fur-consultation-close" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="fur-modal__content">
+        <div class="fur-consultation-form-container">
+          <span class="fur-consultation-tag">Bespoke Services</span>
+          <h3>Book Design Consultation</h3>
+          <p class="fur-consultation-desc">Collaborate with our interior designers to curate a custom-tailored layout for your space.</p>
+          
+          <form id="fur-consultation-form" class="fur-consultation-form">
+            <div class="fur-consultation-form__group">
+              <label for="consult-name">Full Name</label>
+              <input type="text" id="consult-name" required placeholder="e.g. Eleanor Vance">
+            </div>
+            
+            <div class="fur-consultation-form__group">
+              <label for="consult-email">Email Address</label>
+              <input type="email" id="consult-email" required placeholder="e.g. eleanor@example.com">
+            </div>
+            
+            <div class="fur-consultation-form__group">
+              <label for="consult-service">Select Service</label>
+              <select id="consult-service" required>
+                <option value="" disabled selected>Choose a design service...</option>
+                <option value="3d-layout">Complimentary 3D Room Layout Plan</option>
+                <option value="material-swatches">Color & Material Swatch Consultation</option>
+                <option value="custom-furniture">Custom Sofa Upholstery Configuration</option>
+                <option value="full-room">Full Room Curation & Furnishing</option>
+              </select>
+            </div>
+            
+            <div class="fur-consultation-form__group">
+              <label for="consult-notes">Project Details (Optional)</label>
+              <textarea id="consult-notes" rows="3" placeholder="Tell us about your room size, style preferences, or current challenges..."></textarea>
+            </div>
+            
+            <button type="submit" class="fur-consultation-form__submit">Submit Booking Request &rarr;</button>
+          </form>
+          
+          <div id="fur-consultation-success" class="fur-consultation-success" style="display: none;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="fur-success-icon"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <h4>Request Submitted</h4>
+            <p>Thank you! Our design concierge team will contact you within 24 hours to schedule your 1-on-1 session.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products Database -->
+  
+
+  <!-- Core Javascript -->
+  <script src="assets/js/main.js"></script>
+  
+  
+</body>
+</html>

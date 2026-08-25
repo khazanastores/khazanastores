@@ -1324,7 +1324,7 @@ const FUR_Theme = {
 
     if (this.state.cart.length === 0) {
       container.innerHTML = `<div class="fur-cart-drawer__empty" style="text-align:center; padding-block: 40px; color: var(--fur-text-muted);">Your shopping cart is empty.</div>`;
-      subtotalEl.textContent = "$0.00";
+      subtotalEl.textContent = "₹0.00";
       countBadges.forEach(b => {
         b.textContent = "0";
         b.style.display = "none";
@@ -1346,7 +1346,7 @@ const FUR_Theme = {
           </div>
           <div class="fur-cart-item__details">
             <h4 class="fur-cart-item__title">${item.title}</h4>
-            <div class="fur-cart-item__price">$${(item.price * item.quantity).toFixed(2)}</div>
+            <div class="fur-cart-item__price">₹${(item.price * item.quantity).toFixed(2)}</div>
             <div class="fur-cart-item__quantity-controls">
               <button class="fur-cart-item__qty-btn fur-cart-item__qty-btn--minus" aria-label="Decrease quantity">&minus;</button>
               <span class="fur-cart-item__qty-val">${item.quantity}</span>
@@ -1360,7 +1360,7 @@ const FUR_Theme = {
     });
 
     // Update Totals & Badge
-    subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+    subtotalEl.textContent = `₹${subtotal.toFixed(2)}`;
     countBadges.forEach(badge => {
       badge.textContent = totalItems.toString();
       badge.style.display = "flex";
@@ -1455,7 +1455,7 @@ const FUR_Theme = {
       <div class="fur-modal-detail-info">
         <span class="fur-modal-detail-category">${product.category.replace("-", " ")}</span>
         <h2 class="fur-modal-detail-title">${product.title}</h2>
-        <div class="fur-modal-detail-price">$${product.price.toFixed(2)}</div>
+        <div class="fur-modal-detail-price">₹${product.price.toFixed(2)}</div>
         <p class="fur-modal-detail-desc">${product.desc || product.description || ""}</p>
         <div class="fur-modal-detail-actions">
           <button class="fur-modal-detail-add-btn" data-modal-add="${product.id}">Add to Shopping Cart</button>
@@ -1895,7 +1895,7 @@ const FUR_Theme = {
       const total = basePrice + diffPrice;
 
       if (priceDisplay) {
-        priceDisplay.textContent = "$" + total.toLocaleString() + ".00";
+        priceDisplay.textContent = "₹" + total.toLocaleString() + ".00";
       }
     };
     
@@ -4241,7 +4241,7 @@ const TFT_Checkout = {
             <p class="tft-chk-summary-item__meta">${item.material || ''}</p>
           </div>
           <div class="tft-chk-summary-item__price-qty">
-            <span class="tft-chk-summary-item__price">$${(item.price * item.quantity).toFixed(2)}</span>
+            <span class="tft-chk-summary-item__price">₹${(item.price * item.quantity).toFixed(2)}</span>
             <span class="tft-chk-summary-item__qty">Qty: ${item.quantity}</span>
           </div>
         </div>`;
@@ -4258,7 +4258,7 @@ const TFT_Checkout = {
     }
     const tax = subtotal * 0.085;
     const total = subtotal + tax + this.shippingRate;
-    const fmt = v => '$' + v.toFixed(2);
+    const fmt = v => '₹' + v.toFixed(2);
 
     const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
     set('tft-checkout-subtotal', fmt(subtotal));

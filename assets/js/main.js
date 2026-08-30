@@ -5447,7 +5447,7 @@ const TFT_Finder = {
       title: p.title,
       category: p.category === "lounge" ? "lounge-chairs" : (p.category === "dining" ? "dining-chairs" : "office-chairs"),
       categoryLabel: p.categoryLabel,
-      price: `$${p.price.toFixed(2)}`,
+      price: `₹${p.price.toFixed(2)}`,
       image: p.image,
       description: p.desc || p.description,
       origin: p.origin,
@@ -6248,7 +6248,7 @@ const TFT_Composer = {
         <div class="tft-rc-prod-card__info">
           <h3 class="tft-rc-prod-card__title">${p.title}</h3>
           <span class="tft-rc-prod-card__spec">${p.footprint.w} &times; ${p.footprint.d} cm</span>
-          <span class="tft-rc-prod-card__price">$${p.price.toFixed(2)}</span>
+          <span class="tft-rc-prod-card__price">₹${p.price.toFixed(2)}</span>
         </div>
         <button class="tft-rc-prod-card__btn" data-place-id="${p.id}">+ ADD</button>
       `;
@@ -6763,7 +6763,7 @@ const TFT_Composer = {
           <div class="tft-rc-hcard__info">
             <h4 class="tft-rc-hcard__title">${title}</h4>
             <div class="tft-rc-hcard__specs">${widthCm} &times; ${depthCm} &times; ${heightCm} cm</div>
-            <div class="tft-rc-hcard__price">${p.price > 0 ? `$${p.price.toFixed(2)}` : 'Custom'}</div>
+            <div class="tft-rc-hcard__price">${p.price > 0 ? `₹${p.price.toFixed(2)}` : 'Custom'}</div>
           </div>
         `;
         card.classList.add("tft-rc-hover-card--visible");
@@ -7709,7 +7709,7 @@ const TFT_Composer = {
           <span class="tft-rc-cart-item__desc">Qty: ${group.count} &bull; ${widthCm} &times; ${depthCm} cm</span>
         </div>
         <div class="tft-rc-cart-item__right">
-          <span class="tft-rc-cart-item__price">${p.price > 0 ? `$${sub.toFixed(2)}` : 'Custom'}</span>
+          <span class="tft-rc-cart-item__price">${p.price > 0 ? `₹${sub.toFixed(2)}` : 'Custom'}</span>
           <button class="tft-rc-cart-item__delete" title="Remove this item group">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
@@ -7749,7 +7749,7 @@ const TFT_Composer = {
     });
 
     if (countBadge) countBadge.innerText = this.state.placedItems.length.toString();
-    if (totalLabel) totalLabel.innerText = `$${totalSum.toFixed(2)}`;
+    if (totalLabel) totalLabel.innerText = `₹${totalSum.toFixed(2)}`;
   },
 
   updateStats: function() {
@@ -7981,14 +7981,14 @@ const TFT_Composer = {
           tr.innerHTML = `
             <td><strong>${title}</strong></td>
             <td>${w} &times; ${d} cm</td>
-            <td>${p.price > 0 ? `$${p.price.toFixed(2)}` : 'Custom'}</td>
+            <td>${p.price > 0 ? `₹${p.price.toFixed(2)}` : 'Custom'}</td>
             <td>${qty}</td>
-            <td>${p.price > 0 ? `$${sub.toFixed(2)}` : 'Custom'}</td>
+            <td>${p.price > 0 ? `₹${sub.toFixed(2)}` : 'Custom'}</td>
           `;
           rowsContainer.appendChild(tr);
         });
 
-        if (totalLabel) totalLabel.innerText = `$${totalSum.toFixed(2)}`;
+        if (totalLabel) totalLabel.innerText = `₹${totalSum.toFixed(2)}`;
       }
     }
 
@@ -8010,7 +8010,7 @@ const TFT_Composer = {
           <img class="tft-rc-detail__img" src="${product.image}" alt="${product.title}">
         </div>
         <h3 class="tft-rc-detail__title">${product.title}</h3>
-        <span class="tft-rc-detail__price">$${product.price.toFixed(2)}</span>
+        <span class="tft-rc-detail__price">₹${product.price.toFixed(2)}</span>
         
         <div class="tft-rc-detail__spec">
           <div class="tft-rc-detail__spec-item">
@@ -9179,8 +9179,8 @@ const TFT_Single = {
       </div>
 
       <div class="tft-ps-det__price-row">
-        <span class="tft-ps-det__price">$${product.price.toFixed(2)}</span>
-        <span class="tft-ps-det__price-orig">$${(product.price * 1.2).toFixed(2)}</span>
+        <span class="tft-ps-det__price">₹${product.price.toFixed(2)}</span>
+        <span class="tft-ps-det__price-orig">₹${(product.price * 1.2).toFixed(2)}</span>
         <span class="tft-ps-det__sale-badge">20% OFF</span>
       </div>
 
@@ -9332,7 +9332,7 @@ const TFT_Single = {
               <h3 class="tft-related-card__title">${prod.title}</h3>
               <div class="tft-related-card__divider"></div>
               <div class="tft-related-card__footer">
-                <span class="tft-related-card__price">$${prod.price.toFixed(2)}</span>
+                <span class="tft-related-card__price">₹${prod.price.toFixed(2)}</span>
                 <span class="tft-related-card__badge">Solid Wood</span>
               </div>
             </div>
@@ -10872,7 +10872,7 @@ const TFT_Shop = {
             </h3>
             <p class="tft-shop-card__desc">${prod.desc || prod.description || ""}</p>
             <div class="tft-shop-card__footer">
-              <span class="tft-shop-card__price">$${prod.price.toFixed(2)}</span>
+              <span class="tft-shop-card__price">₹${prod.price.toFixed(2)}</span>
               <button class="tft-shop-card__add-btn" data-action="add-to-cart">Add to Cart</button>
             </div>
           </div>

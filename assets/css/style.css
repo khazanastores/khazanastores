@@ -17171,7 +17171,7 @@ body[data-theme="dark"] .tft-features-bar__icon {
   height: 380px !important;
   display: flex !important;
   flex-direction: column !important;
-  background-color: var(--fur-ref-beige-200) !important;
+  background-color: var(--fur-ref-white) !important;
   border-radius: var(--fur-radius-lg) !important;
   overflow: hidden !important;
   position: relative !important;
@@ -46877,8 +46877,8 @@ body.tft-redesign-layout .tft-mega__feature-card--dark .tft-mega__feature-btn:ho
 /* Proportional scaling header logo to prevent top/bottom cutoff/clipping */
 body.tft-redesign-layout .tft-header__logo-arch img {
   width: auto !important;
-  height: 54px !important;
-  max-height: 54px !important;
+  height: 90px !important;
+  max-height: 90px !important;
   object-fit: contain !important;
 }
 
@@ -46893,8 +46893,8 @@ body.tft-redesign-layout .tft-footer__logo-group {
 
 body.tft-redesign-layout .tft-footer__logo-arch img {
   width: auto !important;
-  height: 54px !important;
-  max-height: 54px !important;
+  height: 150px !important;
+  max-height: 150px !important;
   display: block !important;
   object-fit: contain !important;
 }
@@ -61224,7 +61224,7 @@ body.tft-redesign-layout .tft-footer__logo-group {
 }
 
 body.tft-redesign-layout .tft-footer__logo-arch img {
-  width: 50px !important;
+  width: 170px !important;
   height: auto !important;
   display: block !important;
   flex-shrink: 0 !important;

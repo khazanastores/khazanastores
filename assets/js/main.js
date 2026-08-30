@@ -4835,9 +4835,9 @@ const TFT_Redesign = {
   splitSlides: [
     {
       leftBg: "var(--fur-ref-green-900)",
-      tagline: "CURATED FOR CALM. DESIGNED TO LAST.",
-      title: 'Naturally beautiful. <br>Uniquely <span class="tft-hero-split__title-script">yours.</span>',
-      desc: "Timeless furniture and decor crafted from natural materials for a home that feels calm, warm, and uniquely yours.",
+      tagline: "Exclusive Paintings",
+      title: 'Art Made Exclusively for <span class="tft-hero-split__title-script">Khazana Stores</span>',
+      desc: "Original artworks inspired by the beauty of Kerala Mural Art. Bring vibrant colours and timeless artistry into your home.",
       btnText: "Shop New Arrivals",
       btnLink: "shop.html",
       rightBg: "assets/img/fur_room_living.png",
@@ -4849,9 +4849,9 @@ const TFT_Redesign = {
     },
     {
       leftBg: "var(--fur-ref-green-800)",
-      tagline: "ORGANIC TEXTURES. ELEVATED FORM.",
-      title: 'Tactile comfort. <br>Modern <span class="tft-hero-split__title-script">living.</span>',
-      desc: "Immerse your space in the richness of raw timbers, certified organic cotton, and hand-finished premium hardware.",
+      tagline: "Timeless Brass Collection",
+      title: 'Tradition Crafted with <span class="tft-hero-split__title-script">Elegance.</span>',
+      desc: "Discover beautifully crafted brass pieces inspired by Indian heritage. Add warmth, character, and timeless charm to your interiors.",
       btnText: "Explore Furniture",
       btnLink: "shop-materials.html",
       rightBg: "assets/img/fur_hero_harmony_sofa.png",
@@ -4863,9 +4863,9 @@ const TFT_Redesign = {
     },
     {
       leftBg: "var(--fur-ref-forest-950)",
-      tagline: "MINIMALIST DESIGN. MAXIMUM PEACE.",
-      title: 'Elegance in <br>every <span class="tft-hero-split__title-script">detail.</span>',
-      desc: "Discover a collection designed around clean lines, quiet luxury, and sustainable European craftsmanship built to endure.",
+      tagline: "Ceramic Gifts",
+      title: 'Crafted to <span class="tft-hero-split__title-script">Delight</span>',
+      desc: "Discover charming ceramic pieces that combine artistic beauty with everyday elegance. Beautiful choices for gifting or adding personality to your home.",
       btnText: "Shop Best Sellers",
       btnLink: "shop.html?filter=best-sellers",
       rightBg: "assets/img/fur_hero_boucle_chair.png",

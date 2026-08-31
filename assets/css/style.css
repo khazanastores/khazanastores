@@ -8220,6 +8220,9 @@ body[data-theme="dark"] .fur-hero--classic .fur-hero__trust-strip {
 
 /* Product Tooltip */
 .fur-lookbook-slider__tooltip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   position: absolute !important;
   bottom: 100% !important;
   left: 50% !important;
@@ -8228,7 +8231,7 @@ body[data-theme="dark"] .fur-hero--classic .fur-hero__trust-strip {
   border: 1px solid var(--fur-border) !important;
   border-radius: var(--fur-radius-md) !important;
   padding: 16px !important;
-  width: 200px !important;
+  width: 260px !important;
   box-shadow: 0 10px 30px var(--fur-shadow) !important;
   opacity: 0 !important;
   visibility: hidden !important;

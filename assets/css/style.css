@@ -61786,3 +61786,548 @@ body.tft-redesign-layout .tft-footer__submit-btn:hover {
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+/* ==========================================================================
+   SYSTEM COMPONENT: ACCOUNT SIDEBAR & OTP AUTHENTICATION
+   ========================================================================== */
+.fur-account-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: hsla(0, 0%, 0%, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fur-account-overlay[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fur-account-drawer {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--fur-surface, #ffffff);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fur-account-overlay[aria-hidden="false"] .fur-account-drawer {
+  transform: translateX(0);
+}
+
+.fur-account-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  border-bottom: 1px solid var(--fur-border, #e5e5e5);
+  background: var(--fur-surface, #ffffff);
+}
+
+.fur-account-drawer__header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fur-text, #111111);
+}
+
+.fur-account-drawer__header-title h3 {
+  font-family: var(--fur-font-serif, "Playfair Display", Georgia, serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.fur-account-drawer__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Auth Tabs */
+.tft-auth-tabs {
+  display: flex;
+  gap: 8px;
+  background: var(--fur-surface-secondary, #f8f8f8);
+  padding: 4px;
+  border-radius: var(--fur-radius-full, 9999px);
+  margin-bottom: 24px;
+  border: 1px solid var(--fur-border, #eaeaea);
+}
+
+.tft-auth-tab {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: var(--fur-radius-full, 9999px);
+  border: none;
+  background: transparent;
+  font-family: var(--fur-font-sans, "Plus Jakarta Sans", sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fur-text-muted, #666666);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tft-auth-tab--active {
+  background: var(--fur-surface, #ffffff);
+  color: var(--fur-text, #111111);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Auth Panels */
+.tft-auth-panel {
+  display: none;
+  animation: tftFadeIn 0.3s ease;
+}
+
+.tft-auth-panel--active {
+  display: block;
+}
+
+@keyframes tftFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tft-auth-form__header {
+  margin-bottom: 20px;
+}
+
+.tft-auth-form__header h4 {
+  font-family: var(--fur-font-serif, "Playfair Display", serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+  color: var(--fur-text, #111111);
+}
+
+.tft-auth-form__header p {
+  font-size: 0.85rem;
+  color: var(--fur-text-muted, #666666);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.tft-auth-field {
+  margin-bottom: 18px;
+}
+
+.tft-auth-field label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fur-text-muted, #555555);
+  margin-bottom: 8px;
+}
+
+.tft-auth-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tft-auth-input-wrap svg {
+  position: absolute;
+  left: 14px;
+  color: var(--fur-text-muted, #888888);
+  pointer-events: none;
+}
+
+.tft-auth-input-wrap input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid var(--fur-border, #dddddd);
+  border-radius: var(--fur-radius-md, 8px);
+  font-family: var(--fur-font-sans, sans-serif);
+  font-size: 0.9rem;
+  color: var(--fur-text, #111111);
+  background: var(--fur-surface, #ffffff);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tft-auth-input-wrap input:focus {
+  outline: none;
+  border-color: var(--fur-primary, #111111);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+/* OTP Boxes */
+.tft-otp-boxes {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.tft-otp-box {
+  width: 44px;
+  height: 52px;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: 1px solid var(--fur-border, #cccccc);
+  border-radius: 8px;
+  background: var(--fur-surface, #ffffff);
+  transition: all 0.2s ease;
+}
+
+.tft-otp-box:focus {
+  outline: none;
+  border-color: var(--fur-primary, #111111);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.tft-auth-btn {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: var(--fur-radius-md, 8px);
+  border: none;
+  font-family: var(--fur-font-sans, sans-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.25s ease;
+  margin-top: 10px;
+}
+
+.tft-auth-btn--primary {
+  background-color: var(--fur-primary, #111111);
+  color: #ffffff;
+}
+
+.tft-auth-btn--primary:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+}
+
+.tft-auth-resend-wrap {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--fur-text-muted, #666666);
+}
+
+.tft-auth-resend-btn {
+  background: none;
+  border: none;
+  color: var(--fur-primary, #111111);
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.tft-auth-back-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: none;
+  border: none;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  color: var(--fur-text-muted, #777777);
+  cursor: pointer;
+}
+
+.tft-auth-back-btn:hover {
+  color: var(--fur-primary, #111111);
+}
+
+/* User Dashboard State */
+.tft-user-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--fur-surface-secondary, #f9f9f9);
+  border: 1px solid var(--fur-border, #eaeaea);
+  margin-bottom: 24px;
+}
+
+.tft-user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--fur-primary, #111111);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.tft-user-info h4 {
+  margin: 0 0 2px 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--fur-text, #111111);
+}
+
+.tft-user-info p {
+  margin: 0 0 6px 0;
+  font-size: 0.8rem;
+  color: var(--fur-text-muted, #666666);
+}
+
+.tft-user-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.tft-account-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.tft-account-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--fur-border, #eeeeee);
+  text-decoration: none;
+  color: var(--fur-text, #111111);
+  transition: all 0.2s ease;
+}
+
+.tft-account-menu__item:hover {
+  background: var(--fur-surface-secondary, #f8f8f8);
+  border-color: var(--fur-primary, #111111);
+  transform: translateX(2px);
+}
+
+.tft-account-menu__icon {
+  color: var(--fur-primary, #111111);
+  display: flex;
+}
+
+.tft-account-menu__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tft-account-menu__text strong {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.tft-account-menu__text span {
+  font-size: 0.75rem;
+  color: var(--fur-text-muted, #777777);
+}
+
+.tft-account-menu__arrow {
+  color: var(--fur-text-muted, #aaaaaa);
+  font-size: 1rem;
+}
+
+.tft-logout-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #fee2e2;
+  background: #fef2f2;
+  color: #ef4444;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+.tft-logout-btn:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* OTP Toast Alert */
+.tft-otp-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 10000;
+  background: #111111;
+  color: #ffffff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 380px;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.tft-otp-toast--active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.tft-otp-toast__icon {
+  color: #10b981;
+  display: flex;
+}
+
+.tft-otp-toast__title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #10b981;
+  margin-bottom: 2px;
+}
+
+.tft-otp-toast__msg {
+  font-size: 0.85rem;
+  color: #e5e5e5;
+}
+
+.tft-otp-toast__msg strong {
+  color: #ffffff;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.tft-otp-toast__close {
+  background: none;
+  border: none;
+  color: #888888;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0 0 0 8px;
+}
+
+.tft-otp-toast__close:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   SYSTEM COMPONENT: RESPONSIVE LOWER FOOTER 3-COLUMN EQUAL GRID
+   ========================================================================== */
+.tft-footer__lower-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  width: 100%;
+  gap: 24px;
+}
+
+.tft-footer__col-phone {
+  text-align: left;
+  width: 100%;
+}
+
+.tft-footer__col-phone .tft-footer__meta-galleries {
+  justify-content: flex-start;
+}
+
+.tft-footer__col-seen {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.tft-footer__col-seen .tft-footer__seen-logos {
+  justify-content: center;
+}
+
+.tft-footer__col-showrooms {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.tft-footer__col-showrooms .tft-footer__meta-galleries {
+  justify-content: flex-end;
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 991px) {
+  .tft-footer__lower-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .tft-footer__col-phone,
+  .tft-footer__col-seen,
+  .tft-footer__col-showrooms {
+    text-align: center;
+    align-items: center;
+  }
+
+  .tft-footer__col-phone .tft-footer__meta-galleries,
+  .tft-footer__col-showrooms .tft-footer__meta-galleries {
+    justify-content: center;
+  }
+
+  .tft-footer__col-showrooms .tft-footer__meta-label {
+    text-align: center;
+  }
+}
+
+/* Legacy Section Button Centering */
+.tft-legacy-btn-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  width: 100%;
+  text-align: center;
+}
+
+.tft-legacy-btn-wrap .tft-new-arrivals__cta-btn {
+  margin: 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

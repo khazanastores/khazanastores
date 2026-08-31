@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — Secure Payment — Khazana Stores</title>
+  <meta name="description" content="Complete your premium furniture order. Provide shipping details and complete your secure transaction.">
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Core & Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="fur-body tft-redesign-layout">
+
+  <div class="fur-app-layout tft-layout-wide">
+
+    <!-- HEADER START -->
+	<div data-include="modules/header.html"></div>
+	<!-- HEADER END -->
+
+    <!-- MAIN Feed -->
+    <main class="fur-main">
+      <h1 class="sr-only">Secure Checkout — Khazana Stores</h1>
+      
+
+
+      <!-- CHECKOUT LAYOUT -->
+      <section id="wp-block-tft-checkout" class="tft-chk-catalog">
+
+        <h2 class="sr-only">Checkout</h2>
+
+        <!-- HERO BANNER -->
+        <article class="tft-chk-hero" id="wp-block-chk-hero">
+          <img class="tft-chk-hero__img" src="assets/img/fur_banner_sofa.png" alt="Secure Checkout Banner" width="1920" height="700" loading="eager">
+          <div class="tft-chk-hero__overlay" aria-hidden="true"></div>
+          <div class="tft-chk-hero__content">
+            <span class="tft-chk-hero__eyebrow">SECURE. ARTISAN. TRUSTED.</span>
+            <h2 class="tft-chk-hero__title">Secure Checkout</h2>
+            <p class="tft-chk-hero__desc">Review your artisan selection, choose a sustainable dispatch method, and confirm your order.</p>
+          </div>
+        </article>
+
+
+        <!-- 4-STEP PROCESS STEPPER -->
+        <nav class="tft-chk-stepper" id="wp-block-chk-stepper" aria-label="Order progress">
+          <div class="tft-chk-stepper__step tft-chk-stepper__step--active">
+            <div class="tft-chk-stepper__bubble" role="status" aria-label="Step 1 active">1</div>
+            <div class="tft-chk-stepper__label">
+              <span class="tft-chk-stepper__title">Shipping Info</span>
+              <span class="tft-chk-stepper__subtitle">Delivery details</span>
+            </div>
+          </div>
+          <div class="tft-chk-stepper__step">
+            <div class="tft-chk-stepper__bubble">2</div>
+            <div class="tft-chk-stepper__label">
+              <span class="tft-chk-stepper__title">Dispatch Method</span>
+              <span class="tft-chk-stepper__subtitle">Courier selection</span>
+            </div>
+          </div>
+          <div class="tft-chk-stepper__step">
+            <div class="tft-chk-stepper__bubble">3</div>
+            <div class="tft-chk-stepper__label">
+              <span class="tft-chk-stepper__title">Payment</span>
+              <span class="tft-chk-stepper__subtitle">Secure transaction</span>
+            </div>
+          </div>
+          <div class="tft-chk-stepper__step">
+            <div class="tft-chk-stepper__bubble">4</div>
+            <div class="tft-chk-stepper__label">
+              <span class="tft-chk-stepper__title">Confirmation</span>
+              <span class="tft-chk-stepper__subtitle">Order complete</span>
+            </div>
+          </div>
+        </nav>
+
+        <!-- TWO-COLUMN LAYOUT -->
+        <div class="tft-chk-layout" id="wp-block-chk-layout">
+
+          <!-- LEFT: FORMS -->
+          <div class="tft-chk-left-col">
+            <form id="tft-checkout-form" data-tft-submit="checkout-submit" novalidate>
+
+              <!-- 1. SHIPPING INFO CARD -->
+              <article class="tft-chk-card" id="wp-block-chk-shipping-info">
+                <header class="tft-chk-card__header">
+                  <h2 class="tft-chk-card__title">1. Delivery Address</h2>
+                  <button type="button" class="tft-chk-card__saved-addr-btn">Use Saved Address</button>
+                </header>
+                <div class="tft-chk-input-row">
+                  <div class="tft-chk-input-group">
+                    <label class="tft-chk-label" for="c-fname">First Name</label>
+                    <input class="tft-chk-input" type="text" id="c-fname" placeholder="e.g. John" required autocomplete="given-name">
+                  </div>
+                  <div class="tft-chk-input-group">
+                    <label class="tft-chk-label" for="c-lname">Last Name</label>
+                    <input class="tft-chk-input" type="text" id="c-lname" placeholder="e.g. Doe" required autocomplete="family-name">
+                  </div>
+                </div>
+                <div class="tft-chk-input-group">
+                  <label class="tft-chk-label" for="c-address">Street Address</label>
+                  <input class="tft-chk-input" type="text" id="c-address" placeholder="e.g. 123 Luxury Way, Suite 4" required autocomplete="address-line1">
+                </div>
+                <div class="tft-chk-input-row-three-var">
+                  <div class="tft-chk-input-group">
+                    <label class="tft-chk-label" for="c-city">City</label>
+                    <input class="tft-chk-input" type="text" id="c-city" placeholder="e.g. London" required autocomplete="address-level2">
+                  </div>
+                  <div class="tft-chk-input-group">
+                    <label class="tft-chk-label" for="c-state">State</label>
+                    <input class="tft-chk-input" type="text" id="c-state" placeholder="e.g. England" required autocomplete="address-level1">
+                  </div>
+                  <div class="tft-chk-input-group">
+                    <label class="tft-chk-label" for="c-zip">ZIP Code</label>
+                    <input class="tft-chk-input" type="text" id="c-zip" placeholder="e.g. SW1A 1AA" required autocomplete="postal-code">
+                  </div>
+                </div>
+                <div class="tft-chk-input-group">
+                  <label class="tft-chk-label" for="c-country">Country</label>
+                  <select class="tft-chk-select" id="c-country" required autocomplete="country">
+                    <option value="">Select countryâ€¦</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="US">United States</option>
+                    <option value="FR">France</option>
+                    <option value="DE">Germany</option>
+                    <option value="IT">Italy</option>
+                    <option value="ES">Spain</option>
+                  </select>
+                </div>
+              </article>
+
+              <!-- GREEN NOTICE -->
+              <div class="tft-chk-notice" role="note">
+                <svg class="tft-chk-notice__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <div class="tft-chk-notice__body">
+                  <p class="tft-chk-notice__title">ðŸŒ± A tree is planted for every order</p>
+                  <p class="tft-chk-notice__desc">We partner with certified reforestation programmes in the Black Forest. Your purchase plants one tree and offsets shipping carbon.</p>
+                  <a class="tft-chk-notice__link" href="#">Learn about our pledge &rarr;</a>
+                </div>
+              </div>
+
+              <!-- STEP 1 NAVIGATION -->
+              <div class="tft-chk-step-nav" id="tft-chk-nav-step1">
+                <button type="button" class="tft-cnt-submit-btn" data-tft-click="checkout-goto" data-tft-step="2">
+                  Continue to Dispatch
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+
+              <!-- 2. SHIPPING METHOD CARD (hidden initially) -->
+              <article class="tft-chk-card" id="wp-block-chk-dispatch">
+                <header class="tft-chk-card__header">
+                  <h2 class="tft-chk-card__title">2. Dispatch Method</h2>
+                </header>
+                <div class="tft-chk-shipping-methods" role="radiogroup" aria-label="Shipping method">
+                  <button type="button" class="tft-chk-shipping-card tft-chk-shipping-card--active" id="tft-ship-standard" data-rate="0" aria-pressed="true">
+                    <span class="tft-chk-shipping-card__radio-container"><span class="tft-chk-shipping-card__radio-custom"></span></span>
+                    <svg class="tft-chk-shipping-card__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    <span class="tft-chk-shipping-card__info">
+                      <span class="tft-chk-shipping-card__title">Standard</span>
+                      <span class="tft-chk-shipping-card__desc">5â€“7 business days</span>
+                      <span class="tft-chk-shipping-card__price">Free</span>
+                    </span>
+                  </button>
+                  <button type="button" class="tft-chk-shipping-card" id="tft-ship-express" data-rate="24.95" aria-pressed="false">
+                    <span class="tft-chk-shipping-card__radio-container"><span class="tft-chk-shipping-card__radio-custom"></span></span>
+                    <svg class="tft-chk-shipping-card__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <span class="tft-chk-shipping-card__info">
+                      <span class="tft-chk-shipping-card__title">Express</span>
+                      <span class="tft-chk-shipping-card__desc">2â€“3 business days</span>
+                      <span class="tft-chk-shipping-card__price">$24.95</span>
+                    </span>
+                  </button>
+                  <button type="button" class="tft-chk-shipping-card" id="tft-ship-overnight" data-rate="59.00" aria-pressed="false">
+                    <span class="tft-chk-shipping-card__radio-container"><span class="tft-chk-shipping-card__radio-custom"></span></span>
+                    <svg class="tft-chk-shipping-card__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span class="tft-chk-shipping-card__info">
+                      <span class="tft-chk-shipping-card__title">Overnight</span>
+                      <span class="tft-chk-shipping-card__desc">Next business day</span>
+                      <span class="tft-chk-shipping-card__price">$59.00</span>
+                    </span>
+                  </button>
+                </div>
+              </article>
+
+              <!-- STEP 2 NAVIGATION -->
+              <div class="tft-chk-step-nav" id="tft-chk-nav-step2" style="display:none;">
+                <button type="button" class="tft-chk-step-nav__back" data-tft-click="checkout-goto" data-tft-step="1">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+                  Back
+                </button>
+                <button type="button" class="tft-cnt-submit-btn" data-tft-click="checkout-goto" data-tft-step="3">
+                  Continue to Payment
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+
+              <!-- 3. PAYMENT CARD (hidden initially) -->
+              <article class="tft-chk-card" id="wp-block-chk-payment">
+                <header class="tft-chk-card__header">
+                  <h2 class="tft-chk-card__title">3. Payment Method</h2>
+                </header>
+                <div class="tft-chk-payment-tabs" role="tablist" aria-label="Payment method">
+                  <button type="button" class="tft-chk-payment-tab tft-chk-payment-tab--active" role="tab" id="tft-pay-card" aria-selected="true" aria-controls="tft-pay-card-fields">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    <span class="tft-chk-payment-tab__title">Credit Card</span>
+                  </button>
+                  <button type="button" class="tft-chk-payment-tab" role="tab" id="tft-pay-paypal" aria-selected="false" aria-controls="tft-pay-paypal-fields">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 13.5c0 3.6 2.8 5.5 7 5.5h1l1 4H9s-6-1-6-8.5C3 7 8 4 12 4h4c3 0 5 2 5 5s-2 5-5 5h-3l-1-4h4c1 0 2-.9 2-2s-1-2-2-2h-4c-3 0-5 2-5 4.5z"/></svg>
+                    <span class="tft-chk-payment-tab__title">PayPal</span>
+                  </button>
+                  <button type="button" class="tft-chk-payment-tab" role="tab" id="tft-pay-bank" aria-selected="false" aria-controls="tft-pay-bank-fields">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    <span class="tft-chk-payment-tab__title">Bank Transfer</span>
+                  </button>
+                </div>
+                <div id="tft-pay-card-fields" role="tabpanel" aria-labelledby="tft-pay-card" tabindex="0">
+                  <div class="tft-chk-input-group" style="margin-block-end:16px;">
+                    <label class="tft-chk-label" for="c-cardname">Cardholder Name</label>
+                    <input class="tft-chk-input" type="text" id="c-cardname" placeholder="e.g. John Doe" autocomplete="cc-name">
+                  </div>
+                  <div class="tft-chk-input-group" style="margin-block-end:16px;">
+                    <label class="tft-chk-label" for="c-cardnum">Card Number</label>
+                    <div class="tft-chk-input-wrap">
+                      <input class="tft-chk-input" type="text" id="c-cardnum" placeholder="4000 1234 5678 9010" maxlength="19" data-tft-input="checkout-format-card" autocomplete="cc-number">
+                      <span class="tft-chk-input-wrap__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="tft-chk-input-row">
+                    <div class="tft-chk-input-group">
+                      <label class="tft-chk-label" for="c-expiry">Expiry Date</label>
+                      <input class="tft-chk-input" type="text" id="c-expiry" placeholder="MM/YY" maxlength="5" data-tft-input="checkout-format-expiry" autocomplete="cc-exp">
+                    </div>
+                    <div class="tft-chk-input-group">
+                      <label class="tft-chk-label" for="c-cvv">CVV</label>
+                      <input class="tft-chk-input" type="password" id="c-cvv" placeholder="•••" maxlength="4" autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- STEP 3 NAVIGATION -->
+              <div class="tft-chk-step-nav" id="tft-chk-nav-step3" style="display:none;">
+                <button type="button" class="tft-chk-step-nav__back" data-tft-click="checkout-goto" data-tft-step="2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+                  Back
+                </button>
+                <button type="submit" id="tft-chk-submit-btn" class="tft-cnt-submit-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  Complete Secure Payment
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- RIGHT: ORDER SUMMARY STICKY PANEL -->
+          <aside class="tft-chk-summary-panel" id="wp-block-chk-summary" aria-label="Order summary">
+            <div class="tft-chk-summary-card">
+              <header class="tft-chk-summary-card__header">
+                <h2 class="tft-chk-summary-card__title">Order Summary</h2>
+                <a class="tft-chk-summary-card__edit-link" href="shop.html">Edit cart</a>
+              </header>
+              <div class="tft-chk-summary-items" id="tft-checkout-recap-items" aria-live="polite">
+                <!-- Dynamically populated by JS -->
+              </div>
+              <div class="tft-chk-totals">
+                <div class="tft-chk-totals__row">
+                  <span>Subtotal</span>
+                  <span id="tft-checkout-subtotal">$0.00</span>
+                </div>
+                <div class="tft-chk-totals__row">
+                  <span>Shipping</span>
+                  <span id="tft-checkout-shipping">Free</span>
+                </div>
+                <div class="tft-chk-totals__row">
+                  <span>Estimated Tax (8.5%)</span>
+                  <span id="tft-checkout-tax">$0.00</span>
+                </div>
+                <div class="tft-chk-totals__row tft-chk-totals__row--total">
+                  <span>Total</span>
+                  <span id="tft-checkout-total">$0.00</span>
+                </div>
+              </div>
+              <div class="tft-chk-co2-offset" role="note">
+                <svg class="tft-chk-co2-offset__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <div class="tft-chk-co2-offset__body">
+                  <p class="tft-chk-co2-offset__title">CO2-Neutral Shipment</p>
+                  <p class="tft-chk-co2-offset__desc">This order offsets 18.4 kg of COâ‚‚ through certified reforestation in the Black Forest.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- NEED HELP CARD -->
+            <div class="tft-chk-help-card" id="wp-block-chk-help">
+              <div class="tft-chk-help-card__content">
+                <h3 class="tft-chk-help-card__title">Need Help?</h3>
+                <p class="tft-chk-help-card__subtitle">Our concierge team is here for you</p>
+                <div class="tft-chk-help-card__channels">
+                  <div class="tft-chk-help-card__channel">
+                    <svg class="tft-chk-help-card__channel-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18L5 0c.97 0 1.83.7 1.98 1.66L7.7 5.5a2 2 0 01-.45 1.89L6.1 8.54A16 16 0 0015.46 17.9l1.15-1.15a2 2 0 011.89-.45l3.84.72A2 2 0 0122 18.79z"/></svg>
+                    <div class="tft-chk-help-card__channel-info">
+                      <span class="tft-chk-help-card__channel-label">Phone</span>
+                      <span class="tft-chk-help-card__channel-val">+91 98795-54463</span>
+                    </div>
+                  </div>
+                  <div class="tft-chk-help-card__channel">
+                    <svg class="tft-chk-help-card__channel-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <div class="tft-chk-help-card__channel-info">
+                      <span class="tft-chk-help-card__channel-label">Email</span>
+                      <span class="tft-chk-help-card__channel-val">info@khazanastores.com</span>
+                    </div>
+                  </div>
+                  <div class="tft-chk-help-card__channel">
+                    <svg class="tft-chk-help-card__channel-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <div class="tft-chk-help-card__channel-info">
+                      <span class="tft-chk-help-card__channel-label">Location</span>
+                      <span class="tft-chk-help-card__channel-val">Bodakdev, Ahmedabad</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tft-chk-help-card__media">
+                <img class="tft-chk-help-card__img" src="assets/img/fur_prod_vase.png" alt="Decorative vase" width="200" height="280" loading="lazy">
+              </div>
+            </div>
+
+            <!-- TRUST BADGES -->
+            <div class="tft-chk-trust-badges" id="wp-block-chk-trust">
+              <div class="tft-chk-trust-badge">
+                <svg class="tft-chk-trust-badge__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                <div class="tft-chk-trust-badge__content">
+                  <p class="tft-chk-trust-badge__title">256-bit SSL Encryption</p>
+                  <p class="tft-chk-trust-badge__desc">All transactions are fully encrypted and secure</p>
+                </div>
+              </div>
+              <div class="tft-chk-trust-badge">
+                <svg class="tft-chk-trust-badge__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <div class="tft-chk-trust-badge__content">
+                  <p class="tft-chk-trust-badge__title">30-Day Returns</p>
+                  <p class="tft-chk-trust-badge__desc">Hassle-free returns within 30 days of delivery</p>
+                </div>
+              </div>
+              <div class="tft-chk-trust-badge">
+                <svg class="tft-chk-trust-badge__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <div class="tft-chk-trust-badge__content">
+                  <p class="tft-chk-trust-badge__title">White-Glove Delivery</p>
+                  <p class="tft-chk-trust-badge__desc">Room placement & packaging removal included</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+
+        <!-- BOTTOM TRUST STRIP -->
+        <div class="tft-chk-trust-strip" id="wp-block-chk-trust-strip">
+          <div class="tft-chk-trust-strip-card">
+            <div class="tft-chk-trust-strip-card__icon-wrap" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="tft-chk-trust-strip-card__content">
+              <p class="tft-chk-trust-strip-card__title">Secure Payments</p>
+              <p class="tft-chk-trust-strip-card__desc">PCI DSS Level 1 certified processor</p>
+            </div>
+          </div>
+          <div class="tft-chk-trust-strip-card">
+            <div class="tft-chk-trust-strip-card__icon-wrap" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="tft-chk-trust-strip-card__content">
+              <p class="tft-chk-trust-strip-card__title">Free Standard Shipping</p>
+              <p class="tft-chk-trust-strip-card__desc">On all orders over $200</p>
+            </div>
+          </div>
+          <div class="tft-chk-trust-strip-card">
+            <div class="tft-chk-trust-strip-card__icon-wrap" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div class="tft-chk-trust-strip-card__content">
+              <p class="tft-chk-trust-strip-card__title">Easy Returns</p>
+              <p class="tft-chk-trust-strip-card__desc">30-day no-hassle policy</p>
+            </div>
+          </div>
+          <div class="tft-chk-trust-strip-card">
+            <div class="tft-chk-trust-strip-card__icon-wrap" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="tft-chk-trust-strip-card__content">
+              <p class="tft-chk-trust-strip-card__title">CO2-Neutral Transit</p>
+              <p class="tft-chk-trust-strip-card__desc">Certified carbon-offset delivery</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    <!-- FOOTER START -->
+    <div data-include="modules/footer.html"></div>
+	<!-- FOOTER END -->
+
+    </main>
+
+  </div>
+
+  <!-- SIDEBAR DRAWERS -->
+  <div data-include="modules/cart-sidebar.html"></div>
+  <div data-include="modules/account-sidebar.html"></div>
+
+  <!-- ORDER PLACED CONFIRMATION MODAL OVERLAY -->
+  <div class="tft-shop-modal-overlay" id="tft-checkout-success-modal" aria-hidden="true">
+    <div class="tft-shop-modal" style="max-width: 500px; text-align: center; padding: 40px;">
+      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--fur-primary)" stroke-width="2" style="margin-bottom: 24px; display: inline-block;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"/></svg>
+      <h2 style="font-family: var(--fur-font-serif); font-size: var(--fur-fs-h2); font-weight: 400; margin-bottom: 12px;">Order Placed Successfully</h2>
+      <p style="color: var(--fur-text-muted); line-height: 1.6; margin-bottom: 8px;">Thank you for shopping with B. Design. Your payment has been processed securely.</p>
+      <p style="font-size: var(--fur-fs-small); color: var(--fur-text); font-weight: 700; margin-bottom: 24px;">Order Invoice: <span id="tft-success-order-id" style="color: var(--fur-primary);"></span></p>
+      <button class="tft-shop-modal__add-btn" data-tft-click="checkout-dismiss" style="width: 100%;">Return to Home</button>
+    </div>
+  </div>
+
+  
+  <!-- Core Javascript -->
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- Checkout Logic Script -->
+  
+</body>
+</html>
+
+

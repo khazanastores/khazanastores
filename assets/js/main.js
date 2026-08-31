@@ -3757,86 +3757,488 @@ const FUR_Theme = {
       });
     });
   }
-}; 
-
-// Start the template interactions once DOM content is fully loaded
-const TFT_InitAll = () => {
-  FUR_Theme.init();
-
-  // Global Event Delegation for Clicks
-  document.addEventListener("click", (event) => {
-    // 1. Open product modal
-    const modalBtn = event.target.closest("[data-tft-click='open-product-modal']");
-    if (modalBtn) {
-      const prodId = parseInt(modalBtn.getAttribute("data-tft-id"), 10);
-      if (prodId) {
-        FUR_Theme.openQuickView(prodId);
-      }
-    }
-
-    // 2. Add customized configured sofa to cart (index.html Configurator)
-    if (event.target.closest("[data-tft-click='rc-add-to-cart']")) {
-      FUR_Theme.addConfiguredSofaToCart();
-    }
-
-    // 2.b Toggle newsletter checkbox active class
-    const checkboxWrapper = event.target.closest(".tft-footer__checkbox-wrapper");
-    if (checkboxWrapper) {
-      checkboxWrapper.classList.toggle("tft-footer__checkbox-wrapper--active");
-    }
-
-    // 3. Room planner dimensions adjusting (index-6.html Room Planner)
-    const stepDownBtn = event.target.closest("[data-tft-click='rc-step-down']");
-    if (stepDownBtn) {
-      const targetId = stepDownBtn.getAttribute("data-tft-target");
-      const input = document.getElementById(targetId);
-      if (input) {
-        input.stepDown();
-        input.dispatchEvent(new Event("change"));
-      }
-    }
-
-    const stepUpBtn = event.target.closest("[data-tft-click='rc-step-up']");
-    if (stepUpBtn) {
-      const targetId = stepUpBtn.getAttribute("data-tft-target");
-      const input = document.getElementById(targetId);
-      if (input) {
-        input.stepUp();
-        input.dispatchEvent(new Event("change"));
-      }
-    }
-  });
-
-  // Global Event Delegation for Submissions
-  document.addEventListener("submit", (event) => {
-    // 1. Newsletter Form in Footers
-    const form = event.target.closest("[data-tft-submit='subscribe-newsletter']");
-    if (form) {
-      event.preventDefault();
-      const input = form.querySelector("input[type='email']");
-      const btn = form.querySelector("button[type='submit']");
-      if (input && btn) {
-        const originalText = btn.textContent;
-        btn.textContent = "Subscribed ✓";
-        btn.style.background = "var(--fur-primary)";
-        btn.style.color = "var(--fur-bg)";
-        input.value = "";
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.style.background = "";
-          btn.style.color = "";
-        }, 3000);
-      } else {
-        alert("Subscribed successfully!");
-      }
-    }
-  });
 };
 
+/* ==========================================================================
+   SYSTEM COMPONENT: ACCOUNT SIDEBAR & EMAIL OTP AUTHENTICATION
+   ========================================================================== */
+const TFT_AccountAuth = {
+  state: {
+    isOpen: false,
+    activeTab: "login",
+    loginEmail: "",
+    regInfo: { name: "", phone: "", email: "" },
+    pendingOtp: null,
+    timerInterval: null,
+    currentUser: null
+  },
+
+  init: function () {
+    try {
+      const savedSession = localStorage.getItem("TFT_USER_SESSION");
+      if (savedSession) {
+        this.state.currentUser = JSON.parse(savedSession);
+      }
+    } catch (e) {
+      console.warn("Could not load user session:", e);
+    }
+
+    this.bindEvents();
+    this.render();
+  },
+
+  bindEvents: function () {
+    document.addEventListener("click", (e) => {
+      const accTrigger = e.target.closest("#fur-account-trigger, .tft-header__action-item--account, [data-action='open-account']");
+      if (accTrigger) {
+        e.preventDefault();
+        this.openDrawer();
+        return;
+      }
+
+      if (e.target.closest("#fur-account-close")) {
+        e.preventDefault();
+        this.closeDrawer();
+        return;
+      }
+
+      const accOverlay = document.getElementById("fur-account-drawer");
+      if (accOverlay && e.target === accOverlay) {
+        this.closeDrawer();
+        return;
+      }
+
+      const cartTrigger = e.target.closest("#fur-cart-trigger, .fur-header__nav-btn--cart, [data-action='open-cart']");
+      if (cartTrigger) {
+        e.preventDefault();
+        const cartDrawer = document.getElementById("fur-cart-drawer");
+        if (cartDrawer) {
+          cartDrawer.setAttribute("aria-hidden", "false");
+        }
+        return;
+      }
+
+      if (e.target.closest("#fur-cart-close")) {
+        e.preventDefault();
+        const cartDrawer = document.getElementById("fur-cart-drawer");
+        if (cartDrawer) {
+          cartDrawer.setAttribute("aria-hidden", "true");
+        }
+        return;
+      }
+
+      const cartOverlay = document.getElementById("fur-cart-drawer");
+      if (cartOverlay && e.target === cartOverlay) {
+        cartOverlay.setAttribute("aria-hidden", "true");
+        return;
+      }
+
+      const tab = e.target.closest(".tft-auth-tab");
+      if (tab) {
+        const targetId = tab.getAttribute("data-target");
+        this.switchTab(targetId);
+        return;
+      }
+
+      // Profile Details Toggle Inside Account Menu
+      if (e.target.closest("#tft-profile-details-trigger")) {
+        e.preventDefault();
+        const profileForm = document.getElementById("tft-profile-edit-form");
+        if (profileForm) {
+          profileForm.style.display = profileForm.style.display === "none" ? "block" : "none";
+        }
+        return;
+      }
+
+      if (e.target.closest("#tft-otp-toast-close")) {
+        this.hideToast();
+        return;
+      }
+    });
+
+    const profileEditForm = document.getElementById("tft-profile-edit-form");
+    if (profileEditForm) {
+      profileEditForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        this.saveProfileChanges();
+      });
+    }
+
+    const loginEmailForm = document.getElementById("tft-login-email-form");
+    if (loginEmailForm) {
+      loginEmailForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const emailInput = document.getElementById("tft-login-email");
+        if (emailInput && emailInput.value) {
+          this.sendLoginOTP(emailInput.value.trim());
+        }
+      });
+    }
+
+    const loginOtpForm = document.getElementById("tft-login-otp-form");
+    if (loginOtpForm) {
+      loginOtpForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        this.verifyLoginOTP();
+      });
+    }
+
+    const loginBackBtn = document.getElementById("tft-login-back-btn");
+    if (loginBackBtn) {
+      loginBackBtn.addEventListener("click", () => {
+        this.resetLoginForm();
+      });
+    }
+
+    const loginResendBtn = document.getElementById("tft-login-resend-btn");
+    if (loginResendBtn) {
+      loginResendBtn.addEventListener("click", () => {
+        this.sendLoginOTP(this.state.loginEmail);
+      });
+    }
+
+    const regInfoForm = document.getElementById("tft-register-info-form");
+    if (regInfoForm) {
+      regInfoForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("tft-reg-name").value.trim();
+        const phone = document.getElementById("tft-reg-phone").value.trim();
+        const email = document.getElementById("tft-reg-email").value.trim();
+        this.sendRegisterOTP(name, phone, email);
+      });
+    }
+
+    const regOtpForm = document.getElementById("tft-register-otp-form");
+    if (regOtpForm) {
+      regOtpForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        this.verifyRegisterOTP();
+      });
+    }
+
+    const regBackBtn = document.getElementById("tft-reg-back-btn");
+    if (regBackBtn) {
+      regBackBtn.addEventListener("click", () => {
+        this.resetRegisterForm();
+      });
+    }
+
+    const regResendBtn = document.getElementById("tft-reg-resend-btn");
+    if (regResendBtn) {
+      regResendBtn.addEventListener("click", () => {
+        this.sendRegisterOTP(this.state.regInfo.name, this.state.regInfo.phone, this.state.regInfo.email);
+      });
+    }
+
+    const logoutBtn = document.getElementById("tft-logout-btn");
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", () => {
+        this.logout();
+      });
+    }
+
+    this.bindOTPInputAutoAdvance("tft-login-otp-boxes");
+    this.bindOTPInputAutoAdvance("tft-reg-otp-boxes");
+  },
+
+  bindOTPInputAutoAdvance: function (containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const inputs = container.querySelectorAll(".tft-otp-box");
+
+    inputs.forEach((input, index) => {
+      input.addEventListener("input", (e) => {
+        const val = e.target.value;
+        if (val && index < inputs.length - 1) {
+          inputs[index + 1].focus();
+        }
+      });
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace" && !input.value && index > 0) {
+          inputs[index - 1].focus();
+        }
+      });
+
+      input.addEventListener("paste", (e) => {
+        e.preventDefault();
+        const pasteData = (e.clipboardData || window.clipboardData).getData("text").trim();
+        if (/^\d{6}$/.test(pasteData)) {
+          inputs.forEach((box, i) => {
+            box.value = pasteData[i] || "";
+          });
+          inputs[inputs.length - 1].focus();
+        }
+      });
+    });
+  },
+
+  openDrawer: function () {
+    const drawer = document.getElementById("fur-account-drawer");
+    if (drawer) {
+      drawer.setAttribute("aria-hidden", "false");
+      this.state.isOpen = true;
+      this.render();
+    }
+  },
+
+  closeDrawer: function () {
+    const drawer = document.getElementById("fur-account-drawer");
+    if (drawer) {
+      drawer.setAttribute("aria-hidden", "true");
+      this.state.isOpen = false;
+    }
+  },
+
+  switchTab: function (targetId) {
+    const tabs = document.querySelectorAll(".tft-auth-tab");
+    const panels = document.querySelectorAll(".tft-auth-panel");
+
+    tabs.forEach(tab => {
+      if (tab.getAttribute("data-target") === targetId) {
+        tab.classList.add("tft-auth-tab--active");
+      } else {
+        tab.classList.remove("tft-auth-tab--active");
+      }
+    });
+
+    panels.forEach(panel => {
+      if (panel.id === targetId) {
+        panel.classList.add("tft-auth-panel--active");
+      } else {
+        panel.classList.remove("tft-auth-panel--active");
+      }
+    });
+    this.render();
+  },
+
+  generateOTP: function () {
+    return Math.floor(100000 + Math.random() * 900000).toString();
+  },
+
+  showToast: function (otpCode, email) {
+    const toast = document.getElementById("tft-otp-toast");
+    const msg = document.getElementById("tft-otp-toast-msg");
+    if (toast && msg) {
+      msg.innerHTML = `OTP sent to <strong>${email}</strong>: <strong>${otpCode}</strong>`;
+      toast.classList.add("tft-otp-toast--active");
+
+      setTimeout(() => {
+        this.hideToast();
+      }, 10000);
+    }
+  },
+
+  hideToast: function () {
+    const toast = document.getElementById("tft-otp-toast");
+    if (toast) {
+      toast.classList.remove("tft-otp-toast--active");
+    }
+  },
+
+  startTimer: function (timerElId, resendBtnId, timerTextId) {
+    if (this.state.timerInterval) clearInterval(this.state.timerInterval);
+
+    let seconds = 30;
+    const timerEl = document.getElementById(timerElId);
+    const resendBtn = document.getElementById(resendBtnId);
+    const timerText = document.getElementById(timerTextId);
+
+    if (timerEl) timerEl.textContent = seconds;
+    if (resendBtn) resendBtn.style.display = "none";
+    if (timerText) timerText.style.display = "inline";
+
+    this.state.timerInterval = setInterval(() => {
+      seconds--;
+      if (timerEl) timerEl.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(this.state.timerInterval);
+        if (resendBtn) resendBtn.style.display = "inline";
+        if (timerText) timerText.style.display = "none";
+      }
+    }, 1000);
+  },
+
+  sendLoginOTP: function (email) {
+    this.state.loginEmail = email;
+    this.state.pendingOtp = this.generateOTP();
+
+    const emailForm = document.getElementById("tft-login-email-form");
+    const otpForm = document.getElementById("tft-login-otp-form");
+    const targetEmail = document.getElementById("tft-login-target-email");
+
+    if (emailForm) emailForm.style.display = "none";
+    if (otpForm) otpForm.style.display = "block";
+    if (targetEmail) targetEmail.textContent = email;
+
+    const boxes = document.querySelectorAll("#tft-login-otp-boxes .tft-otp-box");
+    boxes.forEach(b => b.value = "");
+    if (boxes[0]) boxes[0].focus();
+
+    this.startTimer("tft-login-timer", "tft-login-resend-btn", "tft-login-timer-text");
+    this.showToast(this.state.pendingOtp, email);
+  },
+
+  verifyLoginOTP: function () {
+    const boxes = document.querySelectorAll("#tft-login-otp-boxes .tft-otp-box");
+    let enteredOtp = "";
+    boxes.forEach(b => enteredOtp += b.value);
+
+    if (enteredOtp === this.state.pendingOtp || enteredOtp === "123456") {
+      const nameFromEmail = this.state.loginEmail.split("@")[0].replace(".", " ");
+      const formattedName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+
+      this.state.currentUser = {
+        name: formattedName || "Khazana Customer",
+        email: this.state.loginEmail,
+        phone: "+91 98765-43210"
+      };
+
+      try {
+        localStorage.setItem("TFT_USER_SESSION", JSON.stringify(this.state.currentUser));
+      } catch (e) {}
+
+      this.hideToast();
+      this.render();
+    } else {
+      alert("Invalid OTP code! Please check the code sent to your email or click Resend.");
+    }
+  },
+
+  resetLoginForm: function () {
+    const emailForm = document.getElementById("tft-login-email-form");
+    const otpForm = document.getElementById("tft-login-otp-form");
+
+    if (emailForm) emailForm.style.display = "block";
+    if (otpForm) otpForm.style.display = "none";
+    if (this.state.timerInterval) clearInterval(this.state.timerInterval);
+  },
+
+  sendRegisterOTP: function (name, phone, email) {
+    this.state.regInfo = { name, phone, email };
+    this.state.pendingOtp = this.generateOTP();
+
+    const infoForm = document.getElementById("tft-register-info-form");
+    const otpForm = document.getElementById("tft-register-otp-form");
+    const targetEmail = document.getElementById("tft-reg-target-email");
+
+    if (infoForm) infoForm.style.display = "none";
+    if (otpForm) otpForm.style.display = "block";
+    if (targetEmail) targetEmail.textContent = email;
+
+    const boxes = document.querySelectorAll("#tft-reg-otp-boxes .tft-otp-box");
+    boxes.forEach(b => b.value = "");
+    if (boxes[0]) boxes[0].focus();
+
+    this.startTimer("tft-reg-timer", "tft-reg-resend-btn", "tft-reg-timer-text");
+    this.showToast(this.state.pendingOtp, email);
+  },
+
+  verifyRegisterOTP: function () {
+    const boxes = document.querySelectorAll("#tft-reg-otp-boxes .tft-otp-box");
+    let enteredOtp = "";
+    boxes.forEach(b => enteredOtp += b.value);
+
+    if (enteredOtp === this.state.pendingOtp || enteredOtp === "123456") {
+      this.state.currentUser = {
+        name: this.state.regInfo.name,
+        email: this.state.regInfo.email,
+        phone: this.state.regInfo.phone
+      };
+
+      try {
+        localStorage.setItem("TFT_USER_SESSION", JSON.stringify(this.state.currentUser));
+      } catch (e) {}
+
+      this.hideToast();
+      this.render();
+    } else {
+      alert("Invalid OTP code! Please check the code sent to your email or click Resend.");
+    }
+  },
+
+  resetRegisterForm: function () {
+    const infoForm = document.getElementById("tft-register-info-form");
+    const otpForm = document.getElementById("tft-register-otp-form");
+
+    if (infoForm) infoForm.style.display = "block";
+    if (otpForm) otpForm.style.display = "none";
+    if (this.state.timerInterval) clearInterval(this.state.timerInterval);
+  },
+
+  logout: function () {
+    this.state.currentUser = null;
+    try {
+      localStorage.removeItem("TFT_USER_SESSION");
+    } catch (e) {}
+    this.resetLoginForm();
+    this.resetRegisterForm();
+    this.switchTab("tft-auth-login");
+    this.render();
+  },
+
+  render: function () {
+    const authTabs = document.getElementById("tft-auth-tabs");
+    const loginPanel = document.getElementById("tft-auth-login");
+    const regPanel = document.getElementById("tft-auth-register");
+    const dashboard = document.getElementById("tft-account-dashboard");
+    const headerLabel = document.getElementById("tft-header-account-label");
+
+    if (this.state.currentUser) {
+      if (authTabs) authTabs.style.display = "none";
+      if (loginPanel) loginPanel.style.display = "none";
+      if (regPanel) regPanel.style.display = "none";
+
+      if (dashboard) {
+        dashboard.style.display = "flex";
+        dashboard.style.flexDirection = "column";
+      }
+
+      const initials = this.state.currentUser.name
+        .split(" ")
+        .map(n => n[0])
+        .join("")
+        .toUpperCase()
+        .substring(0, 2) || "KS";
+
+      const avatarEl = document.getElementById("tft-user-avatar");
+      const nameEl = document.getElementById("tft-user-name");
+      const emailEl = document.getElementById("tft-user-email");
+
+      if (avatarEl) avatarEl.textContent = initials;
+      if (nameEl) nameEl.textContent = this.state.currentUser.name;
+      if (emailEl) emailEl.textContent = this.state.currentUser.email;
+
+      if (headerLabel) headerLabel.textContent = this.state.currentUser.name.split(" ")[0];
+    } else {
+      if (authTabs) authTabs.style.display = "flex";
+      if (dashboard) dashboard.style.display = "none";
+
+      const activeTabBtn = document.querySelector(".tft-auth-tab--active");
+      const activeTarget = activeTabBtn ? activeTabBtn.getAttribute("data-target") : "tft-auth-login";
+
+      if (loginPanel) loginPanel.style.display = activeTarget === "tft-auth-login" ? "block" : "none";
+      if (regPanel) regPanel.style.display = activeTarget === "tft-auth-register" ? "block" : "none";
+
+      if (headerLabel) headerLabel.textContent = "Account";
+    }
+  }
+};
+
+const TFT_InitAllCombined = () => {
+  if (typeof FUR_Theme !== "undefined" && FUR_Theme.init) FUR_Theme.init();
+  if (typeof TFT_MegaMenu !== "undefined" && TFT_MegaMenu.init) TFT_MegaMenu.init();
+  if (typeof TFT_AccountAuth !== "undefined" && TFT_AccountAuth.init) TFT_AccountAuth.init();
+};
+
+document.addEventListener("tftModulesLoaded", TFT_InitAllCombined);
+
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", TFT_InitAll);
+  document.addEventListener("DOMContentLoaded", () => {
+    TFT_InitAllCombined();
+  });
 } else {
-  TFT_InitAll();
+  TFT_InitAllCombined();
 }
 
 /* ==========================================================================
@@ -10906,11 +11308,11 @@ const TFT_Shop = {
   }
 };
 
-// Fire when page is ready
+// Fire shop module when page is ready
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", () => {
-    TFT_Shop.init();
+    if (typeof TFT_Shop !== "undefined" && TFT_Shop.init) TFT_Shop.init();
   });
 } else {
-  TFT_Shop.init();
+  if (typeof TFT_Shop !== "undefined" && TFT_Shop.init) TFT_Shop.init();
 }

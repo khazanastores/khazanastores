@@ -1,0 +1,327 @@
+<!-- SYSTEM LEVEL: ACCOUNT AUTH & PROFILE DRAWER OVERLAY -->
+<aside class="fur-cart-overlay fur-account-overlay" id="fur-account-drawer" aria-hidden="true"
+  aria-label="Account Login and Registration Drawer">
+  <div class="fur-cart-drawer fur-account-drawer">
+
+    <!-- Drawer Header -->
+    <div class="fur-cart-drawer__header fur-account-drawer__header">
+      <div class="fur-account-drawer__header-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <h3 id="tft-account-title">My Account</h3>
+      </div>
+      <button class="fur-cart-drawer__close" id="fur-account-close" aria-label="Close Account Panel">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Drawer Body / Auth Content -->
+    <div class="fur-account-drawer__body" id="fur-account-body">
+
+      <!-- Auth Tabs (Shown ONLY when guest) -->
+      <div class="tft-auth-tabs" id="tft-auth-tabs">
+        <button class="tft-auth-tab tft-auth-tab--active" id="tft-tab-login" data-target="tft-auth-login">Login</button>
+        <button class="tft-auth-tab" id="tft-tab-register" data-target="tft-auth-register">Register</button>
+      </div>
+
+      <!-- ==================== LOGIN VIEW ==================== -->
+      <div class="tft-auth-panel tft-auth-panel--active" id="tft-auth-login">
+        <!-- Step 1: Enter Email -->
+        <form id="tft-login-email-form" class="tft-auth-form">
+          <div class="tft-auth-form__header">
+            <h4>Welcome Back</h4>
+            <p>Enter your email to receive a passwordless OTP login code.</p>
+          </div>
+
+          <div class="tft-auth-field">
+            <label for="tft-login-email">Email Address</label>
+            <div class="tft-auth-input-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <input type="email" id="tft-login-email" required placeholder="name@example.com">
+            </div>
+          </div>
+
+          <button type="submit" class="tft-auth-btn tft-auth-btn--primary">
+            <span>Send Login OTP</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Step 2: Verify OTP (Hidden Initially) -->
+        <form id="tft-login-otp-form" class="tft-auth-form" style="display: none;">
+          <div class="tft-auth-form__header">
+            <h4>Verify OTP Code</h4>
+            <p>Enter 6-digit code sent to <strong id="tft-login-target-email">email@example.com</strong></p>
+          </div>
+
+          <div class="tft-auth-field">
+            <label>6-Digit Verification Code</label>
+            <div class="tft-otp-boxes" id="tft-login-otp-boxes">
+              <input type="text" maxlength="1" class="tft-otp-box" inputmode="numeric" required>
+              <input type="text" maxlength="1" class="tft-otp-box" inputmode="numeric" required>
+              <input type="text" maxlength="1" class="tft-otp-box" inputmode="numeric" required>
+              <input type="text" maxlength="1" class="tft-otp-box" inputmode="numeric" required>
+              <input type="text" maxlength="1" class="tft-otp-box" inputmode="numeric" required>
+              <input type="text" maxlength="1" class="tft-otp-box" inputmode="numeric" required>
+            </div>
+          </div>
+
+          <button type="submit" class="tft-auth-btn tft-auth-btn--primary">Verify &amp; Login</button>
+
+          <div class="tft-auth-resend-wrap">
+            <span id="tft-login-timer-text">Resend code in <strong id="tft-login-timer">30</strong>s</span>
+            <button type="button" id="tft-login-resend-btn" class="tft-auth-resend-btn" style="display: none;">Resend
+              OTP</button>
+          </div>
+          <button type="button" id="tft-login-back-btn" class="tft-auth-back-btn">&larr; Change Email</button>
+        </form>
+      </div>
+
+      <!-- ==================== REGISTER VIEW ==================== -->
+      <div class="tft-auth-panel" id="tft-auth-register">
+        <!-- Step 1: Register Info Form -->
+        <form id="tft-register-info-form" class="tft-auth-form">
+          <div class="tft-auth-form__header">
+            <h4>Create Account</h4>
+            <p>Join Khazana Stores for exclusive perks and order tracking.</p>
+          </div>
+
+          <div class="tft-auth-field">
+            <label for="tft-reg-name">Full Name</label>
+            <div class="tft-auth-input-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <input type="text" id="tft-reg-name" required placeholder="e.g. Eleanor Vance">
+            </div>
+          </div>
+
+          <div class="tft-auth-field">
+            <label for="tft-reg-phone">Phone Number</label>
+            <div class="tft-auth-input-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+              <input type="tel" id="tft-reg-phone" required placeholder="+91 98765-43210">
+            </div>
+          </div>
+
+          <div class="tft-auth-field">
+            <label for="tft-reg-email">Email Address</label>
+            <div class="tft-auth-input-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <input type="email" id="tft-reg-email" required placeholder="name@example.com">
+            </div>
+          </div>
+
+          <button type="submit" class="tft-auth-btn tft-auth-btn--primary">
+            <span>Send Verification OTP</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Step 2: Verify Register OTP (Hidden Initially) -->
+        <form id="tft-register-otp-form" class="tft-auth-form" style="display: none;">
+          <div class="tft-auth-form__header">
+            <h4>Verify Registration Email</h4>
+            <p>Enter 6-digit code sent to <strong id="tft-reg-target-email">email@example.com</strong></p>
+          </div>
+
+          <div class="tft-auth-field">
+            <label>6-Digit Verification Code</label>
+            <div class="tft-otp-boxes" id="tft-reg-otp-boxes">
+              <input type="text" maxlength="1" class="tft-otp-box" inputmode="numeric" required>
+              <input type="text" maxlength="1" class="tft-otp-box" inputmode="numeric" required>
+              <input type="text" maxlength="1" class="tft-otp-box" inputmode="numeric" required>
+              <input type="text" maxlength="1" class="tft-otp-box" inputmode="numeric" required>
+              <input type="text" maxlength="1" class="tft-otp-box" inputmode="numeric" required>
+              <input type="text" maxlength="1" class="tft-otp-box" inputmode="numeric" required>
+            </div>
+          </div>
+
+          <button type="submit" class="tft-auth-btn tft-auth-btn--primary">Verify &amp; Create Account</button>
+
+          <div class="tft-auth-resend-wrap">
+            <span id="tft-reg-timer-text">Resend code in <strong id="tft-reg-timer">30</strong>s</span>
+            <button type="button" id="tft-reg-resend-btn" class="tft-auth-resend-btn" style="display: none;">Resend
+              OTP</button>
+          </div>
+          <button type="button" id="tft-reg-back-btn" class="tft-auth-back-btn">&larr; Edit Registration Info</button>
+        </form>
+      </div>
+
+      <!-- ==================== LOGGED IN USER PROFILE DASHBOARD ==================== -->
+      <div class="tft-account-dashboard" id="tft-account-dashboard" style="display: none;">
+        <div class="tft-user-card">
+          <div class="tft-user-avatar" id="tft-user-avatar">KS</div>
+          <div class="tft-user-info">
+            <h4 id="tft-user-name">Khazana Customer</h4>
+            <p id="tft-user-email">user@example.com</p>
+            <span class="tft-user-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
+              </svg>
+              Verified Member
+            </span>
+          </div>
+        </div>
+
+        <div class="tft-account-menu">
+          <!-- Item 1: Profile Details -->
+          <button type="button" class="tft-account-menu__item" id="tft-profile-details-trigger" style="width: 100%; text-align: left; background: none; cursor: pointer;">
+            <div class="tft-account-menu__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="tft-account-menu__text">
+              <strong>Profile Details</strong>
+              <span>View &amp; edit personal information</span>
+            </div>
+            <span class="tft-account-menu__arrow">&rarr;</span>
+          </button>
+
+          <!-- Item 2: My Orders & Tracking -->
+          <a href="shop-rooms.html" class="tft-account-menu__item">
+            <div class="tft-account-menu__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="tft-account-menu__text">
+              <strong>My Orders &amp; Tracking</strong>
+              <span>Track current orders &amp; past history</span>
+            </div>
+            <span class="tft-account-menu__arrow">&rarr;</span>
+          </a>
+
+          <!-- Item 3: Saved Wishlist -->
+          <a href="shop.html?wishlist=true" class="tft-account-menu__item">
+            <div class="tft-account-menu__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+              </svg>
+            </div>
+            <div class="tft-account-menu__text">
+              <strong>Saved Wishlist</strong>
+              <span>View your bookmarked furniture</span>
+            </div>
+            <span class="tft-account-menu__arrow">&rarr;</span>
+          </a>
+
+          <!-- Item 4: Design Consultations -->
+          <a href="consultation.html" class="tft-account-menu__item">
+            <div class="tft-account-menu__icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <div class="tft-account-menu__text">
+              <strong>Design Consultations</strong>
+              <span>View scheduled Virtual Styling sessions</span>
+            </div>
+            <span class="tft-account-menu__arrow">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Hidden Profile Edit Box (Toggled on Profile Details click) -->
+        <form id="tft-profile-edit-form" class="tft-auth-form" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--fur-border, #eeeeee);">
+          <div class="tft-auth-form__header">
+            <h4>Edit Profile Details</h4>
+            <p>Update your name, contact phone, and delivery address.</p>
+          </div>
+
+          <div class="tft-auth-field">
+            <label for="tft-edit-name">Full Name</label>
+            <div class="tft-auth-input-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <input type="text" id="tft-edit-name" required placeholder="Your full name">
+            </div>
+          </div>
+
+          <div class="tft-auth-field">
+            <label for="tft-edit-phone">Phone Number</label>
+            <div class="tft-auth-input-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <input type="tel" id="tft-edit-phone" required placeholder="+91 98765-43210">
+            </div>
+          </div>
+
+          <div class="tft-auth-field">
+            <label for="tft-edit-address">Delivery Address</label>
+            <div class="tft-auth-input-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <input type="text" id="tft-edit-address" placeholder="e.g. Bodakdev, SG Highway, Ahmedabad">
+            </div>
+          </div>
+
+          <button type="submit" class="tft-auth-btn tft-auth-btn--primary" style="padding: 10px 16px; font-size: 0.8rem;">
+            <span>Save Profile Changes</span>
+          </button>
+        </form>
+
+        <button type="button" class="tft-logout-btn" id="tft-logout-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Log Out Account</span>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</aside>
+
+<!-- OTP SECURITY TOAST NOTIFICATION -->
+<div class="tft-otp-toast" id="tft-otp-toast" aria-live="polite">
+  <div class="tft-otp-toast__icon">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    </svg>
+  </div>
+  <div class="tft-otp-toast__content">
+    <div class="tft-otp-toast__title">Khazana Security OTP</div>
+    <div class="tft-otp-toast__msg" id="tft-otp-toast-msg">Your verification code is <strong>482910</strong></div>
+  </div>
+  <button class="tft-otp-toast__close" id="tft-otp-toast-close" aria-label="Close Notification">&times;</button>
+</div>

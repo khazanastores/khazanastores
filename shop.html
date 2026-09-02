@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kave Shop — Modern & Timeless Furniture Collection</title>
+  <meta name="description"
+    content="Explore our premium collection of handcrafted sofas, dining tables, lounge chairs, and modular layout spaces. Made for intentional and modern living.">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Core & Custom Shop Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body class="fur-body tft-redesign-layout">
+
+  <div class="fur-app-layout tft-layout-wide">
+
+    <!-- HEADER START -->
+    <div data-include="modules/simple-header.html"></div>
+    <!-- HEADER END -->
+
+    <main class="fur-main">
+
+      <!-- SHOP CATALOG MODULE -->
+      <section id="wp-block-shop-catalog" class="tft-shop-catalog">
+        <h2 class="sr-only">Shop catalog</h2>
+        <!-- POST HERO SECTION -->
+        <section class="tft-post-hero" id="wp-block-shop-hero">
+          <img class="tft-post-hero__img" src="assets/img/fur_room_living.png" alt="Living Room Catalog Banner"
+            width="1920" height="700" loading="eager">
+          <div class="tft-post-hero__overlay"></div>
+          <div class="tft-post-hero__content">
+            <div class="tft-post-hero__breadcrumb">
+              <a href="index.html">Home</a> &nbsp;&rarr;&nbsp;
+              <span>Shop Catalog</span>
+            </div>
+            <span class="tft-post-hero__tag">Handcrafted Furniture 1</span>
+            <h2 class="tft-post-hero__title">The Catalog</h2>
+            <p class="tft-post-hero__desc">Filter by categories, wood finishes, premium materials, and price scales.</p>
+          </div>
+        </section>
+
+
+        <div class="tft-shop-catalog__layout">
+
+          <!-- SIDEBAR FILTERS -->
+          <aside class="tft-shop-filters" id="tft-shop-filters">
+            <!-- Mobile Filters Toggle -->
+            <button class="tft-shop-filters__toggle-close" id="tft-shop-close-filters" aria-label="Close filters">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+
+            <div class="tft-shop-filters__group">
+              <h2 class="tft-shop-filters__title">Search</h2>
+              <div class="tft-shop-filters__search-wrap">
+                <input type="text" id="tft-shop-search" class="tft-shop-filters__search" placeholder="Type to search..."
+                  aria-label="Search catalog">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  class="tft-shop-filters__search-icon">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </div>
+            </div>
+
+            <div class="tft-shop-filters__group">
+              <h2 class="tft-shop-filters__title">Sort By</h2>
+              <select id="tft-shop-sort" class="tft-shop-filters__select" aria-label="Sort products">
+                <option value="default">Default Sorting</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name-asc">Name: A to Z</option>
+              </select>
+            </div>
+
+            <div class="tft-shop-filters__group">
+              <h2 class="tft-shop-filters__title">Categories</h2>
+              <ul class="tft-shop-filters__list">
+                <li>
+                  <label class="tft-shop-filters__checkbox-label">
+                    <input type="checkbox" name="category" value="lounge" checked>
+                    <span>Lounge & Sofas</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="tft-shop-filters__checkbox-label">
+                    <input type="checkbox" name="category" value="dining" checked>
+                    <span>Dining & Stools</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="tft-shop-filters__checkbox-label">
+                    <input type="checkbox" name="category" value="tables" checked>
+                    <span>Tables & Coffee Tables</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="tft-shop-filters__checkbox-label">
+                    <input type="checkbox" name="category" value="office" checked>
+                    <span>Office Chairs & Desks</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="tft-shop-filters__checkbox-label">
+                    <input type="checkbox" name="category" value="bedroom" checked>
+                    <span>Bedroom Platforms</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="tft-shop-filters__checkbox-label">
+                    <input type="checkbox" name="category" value="storage" checked>
+                    <span>Storage Consoles</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="tft-shop-filters__checkbox-label">
+                    <input type="checkbox" name="category" value="lighting" checked>
+                    <span>Designer Lighting</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="tft-shop-filters__checkbox-label">
+                    <input type="checkbox" name="category" value="decor" checked>
+                    <span>Aesthetic Decor</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tft-shop-filters__group">
+              <h2 class="tft-shop-filters__title">Availability</h2>
+              <ul class="tft-shop-filters__list">
+                <li>
+                  <label class="tft-shop-filters__checkbox-label">
+                    <input type="checkbox" name="availability" value="in-stock" checked>
+                    <span>In Stock Only</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="tft-shop-filters__checkbox-label">
+                    <input type="checkbox" name="availability" value="custom-order" checked>
+                    <span>Custom Crafting</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tft-shop-filters__group">
+              <h2 class="tft-shop-filters__title">Wood & Materials</h2>
+              <div class="tft-shop-filters__swatches">
+                <button class="tft-shop-filters__swatch tft-shop-filters__swatch--active" data-material="all"
+                  title="All Materials">All</button>
+                <button class="tft-shop-filters__swatch" data-material="oak" title="White Oak">Oak</button>
+                <button class="tft-shop-filters__swatch" data-material="boucle" title="Ivory Bouclé">Bouclé</button>
+                <button class="tft-shop-filters__swatch" data-material="leather"
+                  title="Aniline Leather">Leather</button>
+                <button class="tft-shop-filters__swatch" data-material="travertine"
+                  title="Travertine Marble">Stone</button>
+                <button class="tft-shop-filters__swatch" data-material="brass" title="Brushed Brass">Brass</button>
+              </div>
+            </div>
+
+            <div class="tft-shop-filters__group">
+              <h2 class="tft-shop-filters__title">Max Price</h2>
+              <div class="tft-shop-filters__price-wrap">
+                <input type="range" id="tft-shop-price-slider" min="100" max="4000" step="50" value="4000"
+                  aria-label="Max price slider">
+                <div class="tft-shop-filters__price-labels">
+                  <span>$100</span>
+                  <strong id="tft-shop-price-val">$4,000</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="tft-shop-filters__group" style="margin-block-start: 12px;">
+              <button id="tft-shop-clear-filters" class="tft-shop-filters__clear-btn">Clear All Filters</button>
+            </div>
+          </aside>
+
+          <!-- CATALOG CONTENT PANE -->
+          <div class="tft-shop-catalog__content">
+
+            <!-- Controls Bar -->
+            <div class="tft-shop-controls">
+              <button class="tft-shop-controls__filter-toggle" id="tft-shop-open-filters" aria-label="Open Filters">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
+                </svg>
+                <span>Filter</span>
+              </button>
+              <div class="tft-shop-controls__count" id="tft-shop-item-count">Showing 35 products</div>
+              <div class="tft-shop-controls__modes">
+                <button class="tft-shop-controls__mode-btn tft-shop-controls__mode-btn--active" id="tft-btn-grid4"
+                  aria-label="4-column layout">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7" />
+                    <rect x="14" y="3" width="7" height="7" />
+                    <rect x="14" y="14" width="7" height="7" />
+                    <rect x="3" y="14" width="7" height="7" />
+                  </svg>
+                </button>
+                <button class="tft-shop-controls__mode-btn" id="tft-btn-grid2" aria-label="2-column layout">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="18" />
+                    <rect x="14" y="3" width="7" height="18" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- GRID CONTAINER -->
+            <div class="tft-shop-grid tft-shop-grid--4col" id="tft-shop-grid-container">
+              <!-- Rendered Dynamically via shop.js -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- PREMIUM MATERIAL SWATCH SHOWCASE -->
+        <section id="wp-block-material-showcase" class="tft-materials-sec">
+          <h2 class="tft-materials-sec__title">Our Tactile Material Palette</h2>
+          <div class="tft-materials-grid">
+            <article class="tft-materials-card">
+              <div class="tft-materials-card__img-wrap">
+                <img class="tft-materials-card__img" src="assets/img/fur_mat_oak.png"
+                  alt="European White Oak wood grain close-up" width="400" height="250" loading="lazy">
+              </div>
+              <div class="tft-materials-card__body">
+                <span class="tft-materials-card__tag">FSC Solid Timber</span>
+                <h3 class="tft-materials-card__title">Solid European White Oak</h3>
+                <p class="tft-materials-card__desc">Harvested from certified forests in central Denmark. Features tight
+                  growth rings, sanded down to a silky raw finish and protected by a natural matte oil coating.</p>
+              </div>
+            </article>
+
+            <article class="tft-materials-card">
+              <div class="tft-materials-card__img-wrap">
+                <img class="tft-materials-card__img" src="assets/img/fur_mat_boucle.png"
+                  alt="Textured ivory boucle wool fabric" width="400" height="250" loading="lazy">
+              </div>
+              <div class="tft-materials-card__body">
+                <span class="tft-materials-card__tag">Belgian Textile</span>
+                <h3 class="tft-materials-card__title">Ivory Wool Bouclé</h3>
+                <p class="tft-materials-card__desc">Woven with recycled premium wool fibers. Offers a cozy,
+                  multi-dimensional texture with high abrasion resistance, creating an organic sensory statement.</p>
+              </div>
+            </article>
+
+            <article class="tft-materials-card">
+              <div class="tft-materials-card__img-wrap">
+                <img class="tft-materials-card__img" src="assets/img/fur_mat_marble.png"
+                  alt="Polished travertine marble stone texture" width="400" height="250" loading="lazy">
+              </div>
+              <div class="tft-materials-card__body">
+                <span class="tft-materials-card__tag">Natural Stone</span>
+                <h3 class="tft-materials-card__title">Honed Cream Travertine</h3>
+                <p class="tft-materials-card__desc">Sourced from historic quarries in Italy. Unfilled pits preserve the
+                  natural geologic character, with a matte honed finish that radiates warm luxury.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+      </section>
+
+      <!-- FOOTER START -->
+      <div data-include="modules/footer.html"></div>
+      <!-- FOOTER END -->
+
+    </main>
+
+  </div>
+
+  <!-- CART SIDEBAR START -->
+  <div data-include="modules/cart-sidebar.html"></div>
+  <!-- CART SIDEBAR END -->
+
+  <!-- PRODUCT INQUIRY START -->
+  <div data-include="modules/product-inquiry.html"></div>
+  <!-- PRODUCT INQUIRY END -->
+
+  <!-- ACCOUNT SIDEBAR START -->
+  <div data-include="modules/account-sidebar.html"></div>
+  <!-- ACCOUNT SIDEBAR END -->
+
+
+  <!-- Core Javascript -->
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- Shop Javascript -->
+
+</body>
+
+</html>

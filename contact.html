@@ -1,0 +1,444 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Styling Consultation — Kave Shop</title>
+  <meta name="description" content="Book a design consultation, ask about catalog customizations, or reach our European showrooms.">
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Core & Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="fur-body tft-redesign-layout">
+
+  <div class="fur-app-layout tft-layout-wide">
+
+        <!-- HEADER START -->
+    <div data-include="modules/simple-header.html"></div>
+    <!-- HEADER END -->
+
+    <main class="fur-main">
+      <h1 class="sr-only">Contact Atelier — Let's Create Something Beautiful</h1>
+      
+      <!-- STICKY HEADER -->
+      <header class="fur-header">
+        <div class="fur-header__scrolled-brand">
+          <button class="fur-header__scrolled-toggle" id="fur-scrolled-menu-toggle" aria-expanded="false" aria-label="Toggle Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fur-icon"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+          </button>
+          <a href="index.html" class="fur-header__scrolled-logo" aria-label="Kave Home">
+            <span class="tft-kave-logo">Kav<span class="tft-kave-logo__accent">e</span></span>
+          </a>
+          <nav class="fur-header__scrolled-nav">
+            <a href="shop.html" class="fur-header__scrolled-nav-link">Shop</a>
+            <a href="index-6.html" class="fur-header__scrolled-nav-link">Rooms</a>
+            <a href="index.html#wp-block-fur-promo-slider" class="fur-header__scrolled-nav-link">Styles</a>
+            <a href="blog.html" class="fur-header__scrolled-nav-link">Journal</a>
+            <a href="about.html" class="fur-header__scrolled-nav-link">About</a>
+            
+          </nav>
+        </div>
+
+        <div class="fur-header__ticker">
+          <div class="fur-header__tag">Material Sourcing</div>
+          <div class="fur-header__ticker-wrap">
+            <span class="fur-header__ticker-text">Honoring raw natural textures, quiet architectural proportions, and generation-lasting craftsmanship.</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- POST HERO SECTION -->
+      <section class="tft-post-hero" id="wp-block-contact-hero">
+        <img class="tft-post-hero__img" src="assets/img/fur_consultation_hero.png" alt="Sleek modern lounge interior with natural materials" width="1920" height="700" loading="eager">
+        <div class="tft-post-hero__overlay"></div>
+        <div class="tft-post-hero__content">
+          <div class="tft-post-hero__breadcrumb">
+            <a href="index.html">Home</a> &nbsp;&rarr;&nbsp; 
+            <span>Contact Us</span>
+          </div>
+          <span class="tft-post-hero__tag">Contact Studio</span>
+          <h2 class="tft-post-hero__title">Let's Create Something Beautiful</h2>
+          <p class="tft-post-hero__desc">Have a project in mind or need help selecting materials? Our design consultants are here to guide you.</p>
+        </div>
+      </section>
+
+      <!-- CONTACT & CONSULTATION -->
+      <section id="wp-block-contact" class="tft-cnt-page" style="margin-block-start: 0; padding-block-start: clamp(2rem, 5vw, 4rem);">
+
+        <!-- 3-Column Grid -->
+        <div class="tft-cnt-grid">
+          
+          <!-- Column 1: Contact Form -->
+          <div class="tft-cnt-card">
+            <div>
+              <h2 class="tft-cnt-card__title">Send us a message</h2>
+              <p class="tft-cnt-card__desc">Fill out the form below and our design concierge will respond to you within 24 hours.</p>
+            </div>
+            
+            <form id="tft-contact-form" class="tft-cnt-form" data-tft-submit="contact-submit">
+              <div class="tft-cnt-form__row">
+                <div class="tft-cnt-form__group">
+                  <label class="tft-cnt-label" for="cnt-name">Full Name</label>
+                  <input class="tft-cnt-input" type="text" id="cnt-name" required placeholder="e.g. Eleanor Vance">
+                </div>
+                <div class="tft-cnt-form__group">
+                  <label class="tft-cnt-label" for="cnt-email">Email Address</label>
+                  <input class="tft-cnt-input" type="email" id="cnt-email" required placeholder="e.g. eleanor@example.com">
+                </div>
+              </div>
+
+              <div class="tft-cnt-form__row">
+                <div class="tft-cnt-form__group">
+                  <label class="tft-cnt-label" for="cnt-phone">Phone Number (Optional)</label>
+                  <input class="tft-cnt-input" type="tel" id="cnt-phone" placeholder="e.g. +45 6892 0182">
+                </div>
+                <div class="tft-cnt-form__group">
+                  <label class="tft-cnt-label" for="cnt-subject">Subject</label>
+                  <select class="tft-cnt-select" id="cnt-subject" required>
+                    <option value="" disabled selected>Select a subject...</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="order">Order Support</option>
+                    <option value="trade">Trade Program</option>
+                    <option value="showroom">Showroom Visit</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="tft-cnt-form__group">
+                <label class="tft-cnt-label tft-cnt-interest-label">What are you interested in?</label>
+                <input type="hidden" id="cnt-interest" name="interest" value="consultation">
+                <div class="tft-cnt-interest-grid">
+                  <button type="button" class="tft-cnt-interest-btn tft-cnt-interest-btn--active" data-value="consultation" data-tft-click="contact-select-interest" data-tft-interest="consultation">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    <span>Design Consultation</span>
+                  </button>
+                  <button type="button" class="tft-cnt-interest-btn" data-value="custom" data-tft-click="contact-select-interest" data-tft-interest="custom">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10V4H6v6"/><path d="M3 10v10h18V10"/><path d="M12 10v10"/><path d="M2 10h20"/></svg>
+                    <span>Custom Furniture</span>
+                  </button>
+                  <button type="button" class="tft-cnt-interest-btn" data-value="trade" data-tft-click="contact-select-interest" data-tft-interest="trade">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="16"/><line x1="15" y1="22" x2="15" y2="16"/><line x1="9" y1="16" x2="15" y2="16"/><path d="M9 6h6"/><path d="M9 10h6"/></svg>
+                    <span>Bulk / Trade</span>
+                  </button>
+                  <button type="button" class="tft-cnt-interest-btn" data-value="general" data-tft-click="contact-select-interest" data-tft-interest="general">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <span>General Question</span>
+                  </button>
+                  <button type="button" class="tft-cnt-interest-btn" data-value="other" data-tft-click="contact-select-interest" data-tft-interest="other">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                    <span>Other</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="tft-cnt-form__group">
+                <label class="tft-cnt-label" for="cnt-message">Message</label>
+                <textarea class="tft-cnt-textarea" id="cnt-message" required placeholder="Tell us about your space planning challenges or specific collection inquiries..."></textarea>
+              </div>
+
+              <button type="submit" class="tft-cnt-submit-btn">Send Message &rarr;</button>
+
+              <div class="tft-cnt-privacy-note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>We respect your privacy. Your data is safe.</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- Column 2: Quick Contacts & Advice -->
+          <div style="display: flex; flex-direction: column; gap: var(--fur-margin-block-md);">
+            <!-- Get in touch -->
+            <div class="tft-cnt-card">
+              <div>
+                <h2 class="tft-cnt-card__title">Get in touch</h2>
+                <p class="tft-cnt-card__desc">Choose the channel that best suits your current inquiry.</p>
+              </div>
+
+              <div class="tft-cnt-list">
+                <div class="tft-cnt-item">
+                  <div class="tft-cnt-item__icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  </div>
+                  <div class="tft-cnt-item__content">
+                    <span class="tft-cnt-item__label">Phone Support</span>
+                    <a href="tel:+4568920182" class="tft-cnt-item__val">+45 6892 0182</a>
+                    <span class="tft-cnt-item__sub">Mon-Sat: 10:00 AM â€“ 6:00 PM</span>
+                  </div>
+                </div>
+
+                <div class="tft-cnt-item">
+                  <div class="tft-cnt-item__icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </div>
+                  <div class="tft-cnt-item__content">
+                    <span class="tft-cnt-item__label">Email Inquiries</span>
+                    <a href="mailto:info@kave.com" class="tft-cnt-item__val">info@kave.com</a>
+                    <span class="tft-cnt-item__sub">Typically replies within 24 hours</span>
+                  </div>
+                </div>
+
+                <div class="tft-cnt-item">
+                  <div class="tft-cnt-item__icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                  <div class="tft-cnt-item__content">
+                    <span class="tft-cnt-item__label">Live Chat</span>
+                    <span class="tft-cnt-item__val">Chat with our team</span>
+                    <span class="tft-cnt-item__sub">Available Mon-Sat: 10:00 AM â€“ 6:00 PM</span>
+                  </div>
+                </div>
+
+                <div class="tft-cnt-item">
+                  <div class="tft-cnt-item__icon-wrap">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div class="tft-cnt-item__content">
+                    <span class="tft-cnt-item__label">Studio Visit</span>
+                    <span class="tft-cnt-item__val">By appointment only</span>
+                    <span class="tft-cnt-item__sub">Book a private physical walkthrough</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Need design advice? -->
+            <div class="tft-cnt-card tft-cnt-card--advice">
+              <div>
+                <h2 class="tft-cnt-card__title">Need design advice?</h2>
+                <p class="tft-cnt-card__desc">Book a free 30-minute virtual consultation with our stylists to discuss spatial configurations, textile selections, and wood pairing logic.</p>
+              </div>
+              
+              <button type="button" class="tft-cnt-action-btn" data-tft-click="contact-open-consultation">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Book a Consultation &rarr;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Column 3: Showroom & Socials -->
+          <div style="display: flex; flex-direction: column; gap: var(--fur-margin-block-md);">
+            <!-- Showroom Locator -->
+            <div class="tft-cnt-card">
+              <div>
+                <h2 class="tft-cnt-card__title">Visit our showrooms</h2>
+                <p class="tft-cnt-card__desc">Experience our signature solid-wood craft and curated interior setups in person.</p>
+              </div>
+
+              <div class="tft-cnt-showrooms__tabs">
+                <button type="button" class="tft-cnt-showrooms__tab tft-cnt-showrooms__tab--active" data-value="copenhagen" data-tft-click="contact-select-showroom" data-tft-showroom="copenhagen">Copenhagen</button>
+                <button type="button" class="tft-cnt-showrooms__tab" data-value="paris" data-tft-click="contact-select-showroom" data-tft-showroom="paris">Paris</button>
+                <button type="button" class="tft-cnt-showrooms__tab" data-value="london" data-tft-click="contact-select-showroom" data-tft-showroom="london">London</button>
+              </div>
+
+              <div class="tft-cnt-showrooms__details" id="tft-showroom-details">
+                <div class="tft-cnt-showrooms__media">
+                  <img id="tft-showroom-img" class="tft-cnt-showrooms__img" src="assets/img/fur_room_living.png" alt="Warmly lit Kave Copenhagen showroom featuring organic minimal furniture layout" width="400" height="250" loading="lazy">
+                </div>
+                
+                <div>
+                  <h3 id="tft-showroom-title" class="tft-cnt-label" style="font-size: var(--fur-fs-body); margin-block-end: 8px;">Copenhagen Flagship Studio</h3>
+                  <p id="tft-showroom-address" class="tft-cnt-card__desc" style="margin-block-end: 12px;">Nørregade 14B, 1165 København K, Denmark</p>
+                  <a id="tft-showroom-link" href="https://maps.google.com/?q=Norregade+14B,+Copenhagen" target="_blank" rel="noopener noreferrer" class="tft-cnt-showrooms__link">
+                    <span>View on map</span> &rarr;
+                  </a>
+                </div>
+
+                <div style="border-block-start: 1px solid var(--fur-border); padding-block-start: 12px;">
+                  <span class="tft-cnt-label" style="font-size: 0.75rem; color: var(--fur-text-muted); display: block; margin-block-end: 4px;">Opening Hours</span>
+                  <span id="tft-showroom-hours" class="tft-cnt-card__desc">Mon-Sat: 10:00 AM - 6:00 PM | Sun: Closed</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Follow our journey -->
+            <div class="tft-cnt-card">
+              <div>
+                <h2 class="tft-cnt-card__title">Follow our journey</h2>
+                <p class="tft-cnt-card__desc">Get daily inspiration, wood-shop stories and design updates directly from our creative studios.</p>
+              </div>
+
+              <div style="font-family: var(--fur-font-serif); font-size: var(--fur-fs-h3); font-style: italic; color: var(--fur-primary);">
+                @kave_naturalliving
+              </div>
+
+              <div class="tft-cnt-socials">
+                <a href="#" class="tft-cnt-social-btn" aria-label="Instagram">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href="#" class="tft-cnt-social-btn" aria-label="Pinterest">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="2" x2="22" y2="6"/><path d="M7.5 10.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5z"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6z"/></svg>
+                </a>
+                <a href="#" class="tft-cnt-social-btn" aria-label="Facebook">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="#" class="tft-cnt-social-btn" aria-label="YouTube">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Strip -->
+        <div class="tft-cnt-features">
+          <div class="tft-cnt-feature-card">
+            <div class="tft-cnt-feature-card__icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="tft-cnt-feature-card__content">
+              <strong class="tft-cnt-feature-card__title">Sustainable by Design</strong>
+              <span class="tft-cnt-feature-card__desc">Natural materials & responsible production</span>
+            </div>
+          </div>
+
+          <div class="tft-cnt-feature-card">
+            <div class="tft-cnt-feature-card__icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="tft-cnt-feature-card__content">
+              <strong class="tft-cnt-feature-card__title">Expert Support</strong>
+              <span class="tft-cnt-feature-card__desc">Personalized advice from our designers</span>
+            </div>
+          </div>
+
+          <div class="tft-cnt-feature-card">
+            <div class="tft-cnt-feature-card__icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <div class="tft-cnt-feature-card__content">
+              <strong class="tft-cnt-feature-card__title">Trade Program</strong>
+              <span class="tft-cnt-feature-card__desc">Exclusive benefits for professionals</span>
+            </div>
+          </div>
+
+          <div class="tft-cnt-feature-card">
+            <div class="tft-cnt-feature-card__icon-wrap">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="tft-cnt-feature-card__content">
+              <strong class="tft-cnt-feature-card__title">Secure & Trusted</strong>
+              <span class="tft-cnt-feature-card__desc">Encrypted checkout & data privacy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ & Inspired -->
+        <div class="tft-cnt-faq-inspired">
+          <!-- Accordion column -->
+          <div>
+            <h2 class="tft-cnt-faq__title">Frequently Asked Questions</h2>
+            <div class="tft-cnt-faq-list">
+              <div class="tft-cnt-faq-item">
+                <button type="button" class="tft-cnt-faq-btn" aria-expanded="false" data-tft-click="contact-toggle-faq">
+                  <span>How long does delivery take for custom furniture orders?</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="tft-cnt-faq-panel">
+                  <p>Our standard items are shipped within 3-5 business days. Bespoke finishes or custom dimensions require hand-making in our studio workshops, taking between 14-28 business days depending on design complexity.</p>
+                </div>
+              </div>
+
+              <div class="tft-cnt-faq-item">
+                <button type="button" class="tft-cnt-faq-btn" aria-expanded="false" data-tft-click="contact-toggle-faq">
+                  <span>Are your wood materials sustainably certified?</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="tft-cnt-faq-panel">
+                  <p>Yes, 100% of our solid wood species hold strict FSC or PEFC certifications. We work directly with family-managed forests in Germany and Scandinavia to ensure ethical logging, sorting, and mandatory replanting ratios.</p>
+                </div>
+              </div>
+
+              <div class="tft-cnt-faq-item">
+                <button type="button" class="tft-cnt-faq-btn" aria-expanded="false" data-tft-click="contact-toggle-faq">
+                  <span>Can I request wood sample swatches before ordering?</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="tft-cnt-faq-panel">
+                  <p>Absolutely. You can order swatch packs containing samples of our European Oak, Smoked Oak, Walnut, and ash wood oils. We ship swatches next-day, and the cost is fully refundable upon your first furniture purchase.</p>
+                </div>
+              </div>
+
+              <div class="tft-cnt-faq-item">
+                <button type="button" class="tft-cnt-faq-btn" aria-expanded="false" data-tft-click="contact-toggle-faq">
+                  <span>Do you offer professional assembly services?</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="tft-cnt-faq-panel">
+                  <p>Yes, we offer White Glove delivery and white-glove assembly services across most European and UK postcodes. Our delivery team will assemble your furniture in your room of choice and remove all organic packaging materials.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notepad & Newsletter column -->
+          <div class="tft-cnt-inspired-col">
+            <div class="tft-cnt-inspired-media">
+              <img class="tft-cnt-inspired-img" src="assets/img/fur_journal_book.png" alt="Kave Natural Living wood-grain notebook planner" width="400" height="240" loading="lazy">
+            </div>
+
+            <div class="tft-cnt-newsletter">
+              <h2 class="tft-cnt-newsletter__title">Stay Inspired</h2>
+              <p class="tft-cnt-newsletter__desc">Subscribe to our journal for design thoughts, collection announcements, material guides and exclusive studio subscriber stories.</p>
+              
+              <form class="tft-cnt-newsletter-form" data-tft-submit="contact-newsletter">
+                <div class="tft-cnt-newsletter-form__row">
+                  <input class="tft-cnt-newsletter-input" type="email" required placeholder="Enter your email address" aria-label="Email address">
+                  <button type="submit" class="tft-cnt-newsletter-submit">Subscribe</button>
+                </div>
+                <div class="tft-cnt-checkbox-wrap">
+                  <input class="tft-cnt-checkbox" type="checkbox" id="newsletter-opt-in" required>
+                  <label class="tft-cnt-checkbox-label" for="newsletter-opt-in">I agree to receive newsletters and accept the privacy policy terms.</label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DYNAMIC FOOTER -->
+      <!-- DYNAMIC FOOTER -->
+      <!-- SYSTEM LEVEL: FOOTER (PREMIUM REBUILD) -->
+      <!-- FOOTER START -->
+      <div data-include="modules/footer.html"></div>
+      <!-- FOOTER END -->
+
+    </main>
+
+  </div>
+
+  <!-- CART SIDEBAR START -->
+  <div data-include="modules/cart-sidebar.html"></div>
+  <!-- CART SIDEBAR END -->
+
+  <!-- PRODUCT INQUIRY START -->
+  <div data-include="modules/product-inquiry.html"></div>
+  <!-- PRODUCT INQUIRY END -->
+
+  <!-- ACCOUNT SIDEBAR START -->
+  <div data-include="modules/account-sidebar.html"></div>
+  <!-- ACCOUNT SIDEBAR END -->
+
+  <!-- BOOKING SUCCESS MODAL OVERLAY -->
+  <div class="tft-shop-modal-overlay" id="tft-booking-success-modal" aria-hidden="true">
+    <div class="tft-shop-modal" style="max-width: 500px; text-align: center; padding: 40px;">
+      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--fur-primary)" stroke-width="2" style="margin-bottom: 24px; display: inline-block;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"/></svg>
+      <h2 style="font-family: var(--fur-font-serif); font-size: var(--fur-fs-h2); font-weight: 400; margin-bottom: 12px;">Consultation Scheduled</h2>
+      <p style="color: var(--fur-text-muted); line-height: 1.6; margin-bottom: 24px;">Thank you for reaching out. A spatial design consultant has logged your room dimensions and preferred Japandi style. We will contact you via email shortly.</p>
+      <button class="tft-shop-modal__add-btn" data-tft-click="contact-dismiss" style="width: 100%;">Close Window</button>
+    </div>
+  </div>
+
+  <!-- Core Javascript -->
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- Contact Logic Script -->
+  
+</body>
+</html>

@@ -27,7 +27,7 @@
   --color-white: #ffffff;
 
   /* ── Luxury Container Sizing (Address Home Style) ── */
-  --site-container-max-width: 1560px;
+  --site-container-max-width: 1440px;
 }
 
 /* ============================================================
@@ -699,4 +699,124 @@ body.tft-redesign-layout .tft-new-arrivals__container,
   .tft-footer__upper {
     margin-inline: clamp(12px, 2vw, 32px) !important;
   }
+}
+
+/* ============================================================
+   GLOBAL 0PX BORDER RADIUS (SHARP LUXURY CORNERS EVERYWHERE)
+   ============================================================ */
+:root {
+  --fur-radius-sm: 0px !important;
+  --fur-radius-md: 0px !important;
+  --fur-radius-lg: 0px !important;
+  --fur-radius-xl: 0px !important;
+  --fur-radius-full: 0px !important;
+}
+
+/* Cards, Buttons, Images, Inputs, Badges, Modals, Footer */
+.tft-nb__card,
+.tft-nb__card-media,
+.tft-nb__card-img,
+.tft-new-arrivals__card,
+.tft-new-arrivals__media,
+.tft-new-arrivals__img,
+.tft-new-arrivals__cta-btn,
+.tft-hero-split__btn-primary,
+.tft-hero-split__left,
+.tft-hero-split__right,
+.tft-room-curator__card,
+.tft-journal__card,
+.tft-journal__card-img,
+.tft-ugc__card,
+.tft-materials-card,
+.tft-materials-card__img-wrap,
+.tft-materials-card__img,
+.tft-footer__upper,
+.tft-footer__input,
+.tft-footer__submit-btn,
+.tft-footer__arch-frame,
+.tft-footer__arch-img,
+.tft-footer__trust-card,
+.tft-footer__seen-logo-item,
+.tft-ps-gallery__stage,
+.tft-ps-gallery__main-wrap,
+.tft-ps-gallery__main-img,
+.tft-ps-trust,
+.tft-ps-trust__item,
+.fur-cart-drawer,
+.fur-modal,
+.fur-modal__content,
+.hero-slider__cta,
+.sh-icon-btn,
+.sh-burger,
+.sh-mobile-drawer,
+.tft-fnd-card,
+.tft-fnd-card__img-wrap,
+.tft-fnd-island,
+.tft-fnd-island__btn,
+.tft-shop-filters,
+.tft-shop-search,
+.tft-shop-controls__filter-toggle,
+.tft-shop-controls__mode-btn,
+button,
+input,
+select,
+textarea,
+img {
+  border-radius: 0px !important;
+}
+
+/* ============================================================
+   INDEX-5 (SPATIAL FINDER) 3D VIEWPORT & FOOTER INTEGRATION
+   ============================================================ */
+html.tft-fnd-html,
+body.tft-fnd-body {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  height: auto !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body.tft-fnd-body {
+  padding-top: 136px !important;
+}
+
+@media (max-width: 991px) {
+  body.tft-fnd-body {
+    padding-top: 76px !important;
+  }
+}
+
+body.tft-fnd-body .tft-fnd-viewport {
+  position: relative !important;
+  width: 100% !important;
+  height: calc(100vh - 136px) !important;
+  min-height: 650px !important;
+  inset: auto !important;
+  z-index: 2 !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 991px) {
+  body.tft-fnd-body .tft-fnd-viewport {
+    height: calc(100vh - 76px) !important;
+  }
+}
+
+body.tft-fnd-body .tft-fnd-island-wrap {
+  position: absolute !important;
+  bottom: 24px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 50 !important;
+}
+
+body.tft-fnd-body .tft-footer {
+  position: relative !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  margin-top: 0 !important;
+  background-color: var(--sh-bg-sticky, #f3f0ec) !important;
 }

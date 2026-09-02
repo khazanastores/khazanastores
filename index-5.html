@@ -117,34 +117,7 @@
   <!-- ADD TO CART ACTION FEEDBACK TOAST -->
   <div class="tft-fnd-toast" id="tft-cart-toast" role="status">Added to Cart</div>
 
-  <!-- SYSTEM LEVEL: CART DRAWER OVERLAY -->
-  <aside class="fur-cart-overlay" id="fur-cart-drawer" aria-hidden="true" aria-label="Shopping Cart Drawer">
-    <div class="fur-cart-drawer">
-      <div class="fur-cart-drawer__header">
-        <h3>Shopping Cart</h3>
-        <button class="fur-cart-drawer__close" id="fur-cart-close" aria-label="Close Cart">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
 
-      <div class="fur-cart-drawer__items" id="fur-cart-items-container">
-        <!-- Rendered dynamically via JS -->
-      </div>
-
-      <div class="fur-cart-drawer__footer">
-        <div class="fur-cart-drawer__summary">
-          <span>Subtotal</span>
-          <span class="fur-cart-drawer__subtotal" id="fur-cart-subtotal">₹588.00</span>
-        </div>
-        <button class="fur-cart-drawer__checkout-btn">Proceed to Checkout &rarr;</button>
-        <button class="fur-cart-drawer__clear-btn" id="fur-cart-clear">Clear Cart</button>
-      </div>
-    </div>
-  </aside>
 
   <!-- SYSTEM LEVEL: PRODUCT QUICK VIEW MODAL -->
   <div class="fur-modal-overlay" id="fur-product-modal" aria-hidden="true" role="dialog"
@@ -227,8 +200,21 @@
     </div>
   </div>
 
-  <!-- Products Database -->
+  <!-- FOOTER START -->
+  <div data-include="modules/footer.html"></div>
+  <!-- FOOTER END -->
 
+  <!-- CART SIDEBAR START -->
+  <div data-include="modules/cart-sidebar.html"></div>
+  <!-- CART SIDEBAR END -->
+
+  <!-- PRODUCT INQUIRY START -->
+  <div data-include="modules/product-inquiry.html"></div>
+  <!-- PRODUCT INQUIRY END -->
+
+  <!-- ACCOUNT SIDEBAR START -->
+  <div data-include="modules/account-sidebar.html"></div>
+  <!-- ACCOUNT SIDEBAR END -->
 
   <!-- Core Javascript -->
   <script src="assets/js/include.js"></script>

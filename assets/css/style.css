@@ -40,11 +40,11 @@
   --fur-font-script: 'Alex Brush', cursive;
 
   /* Border Radii */
-  --fur-radius-sm: 8px;
-  --fur-radius-md: 16px;
-  --fur-radius-lg: 24px;
-  --fur-radius-xl: 32px;
-  --fur-radius-full: 9999px;
+  --fur-radius-sm: 0px;
+  --fur-radius-md: 0px;
+  --fur-radius-lg: 0px;
+  --fur-radius-xl: 0px;
+  --fur-radius-full: 0px;
 
   /* Transitions */
   --fur-transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);

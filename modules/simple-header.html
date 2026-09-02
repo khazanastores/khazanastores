@@ -156,12 +156,22 @@
 (function () {
   'use strict';
 
-  /* ── Sticky on scroll ── */
+  /* ── Smart Auto-Detection: Solid vs Slider Transparent Header ── */
   var header = document.getElementById('simpleHeader');
   if (header) {
-    window.addEventListener('scroll', function () {
-      header.classList.toggle('is-sticky', window.scrollY > 60);
-    }, { passive: true });
+    // Check if the current page has a full-screen hero slider
+    var hasSlider = !!document.querySelector('.hero-slider, #heroSlider');
+
+    if (!hasSlider) {
+      // Solid mode for non-slider pages (index-5, product-single, shop, about, etc.)
+      header.classList.add('is-solid');
+      document.body.classList.add('has-solid-header');
+    } else {
+      // Slider mode for index.html: transparent at top, sticky solid on scroll
+      window.addEventListener('scroll', function () {
+        header.classList.toggle('is-sticky', window.scrollY > 40);
+      }, { passive: true });
+    }
   }
 
   /* ── Mobile burger drawer ── */

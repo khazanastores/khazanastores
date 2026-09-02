@@ -25,9 +25,6 @@
   /* ── Utility colour tokens (easy per-slide overrides) ── */
   --color-black: #000000;
   --color-white: #ffffff;
-
-  /* ── Luxury Container Sizing (Address Home Style) ── */
-  --site-container-max-width: 1560px;
 }
 
 /* ============================================================
@@ -73,53 +70,35 @@
   transition: var(--sh-transition);
 }
 
-.simple-header.is-sticky,
-.simple-header.is-solid {
+.simple-header.is-sticky {
   background: var(--sh-bg-sticky);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* ── When sticky or solid mode: switch text + icons from white → dark gray ── */
-.simple-header.is-sticky .sh-nav-list li a,
-.simple-header.is-solid .sh-nav-list li a {
+/* ── When sticky: switch text + icons from white → dark gray ── */
+.simple-header.is-sticky .sh-nav-list li a {
   color: #444;
 }
 
-.simple-header.is-sticky .sh-nav-list li a:hover,
-.simple-header.is-solid .sh-nav-list li a:hover {
+.simple-header.is-sticky .sh-nav-list li a:hover {
   color: var(--sh-accent);
   background: rgba(0, 0, 0, 0.05);
 }
 
-.simple-header.is-sticky .sh-icon-btn,
-.simple-header.is-solid .sh-icon-btn {
+.simple-header.is-sticky .sh-icon-btn {
   color: #444;
 }
 
-.simple-header.is-sticky .sh-icon-btn:hover,
-.simple-header.is-solid .sh-icon-btn:hover {
+.simple-header.is-sticky .sh-icon-btn:hover {
   color: var(--sh-accent);
 }
 
-.simple-header.is-sticky .sh-burger,
-.simple-header.is-solid .sh-burger {
+.simple-header.is-sticky .sh-burger {
   color: #444;
 }
 
-.simple-header.is-sticky .sh-nav-row,
-.simple-header.is-solid .sh-nav-row {
+.simple-header.is-sticky .sh-nav-row {
   border-top-color: rgba(0, 0, 0, 0.1);
-}
-
-/* Add top offset for standard content pages (except full-height 3D canvas index-5) */
-body.has-solid-header:not(.tft-fnd-body) {
-  padding-top: 136px !important;
-}
-
-@media (max-width: 900px) {
-  body.has-solid-header:not(.tft-fnd-body) {
-    padding-top: 76px !important;
-  }
 }
 
 /* ============================================================
@@ -637,66 +616,5 @@ body.has-solid-header:not(.tft-fnd-body) {
 
   to {
     opacity: 0;
-  }
-}
-
-/* ============================================================
-   LUXURY WIDE CONTAINER EXPANSION (ADDRESS HOME STYLE)
-   Expands standard containers to 1560px for an expansive,
-   high-end editorial and modern eCommerce look.
-   ============================================================ */
-
-/* 1. WordPress / Standard Content Containers */
-.alignwide,
-.fur-container,
-.tft-container {
-  max-width: var(--site-container-max-width, 1560px) !important;
-  margin-inline: auto !important;
-  padding-inline: clamp(16px, 3.5vw, 48px) !important;
-  box-sizing: border-box !important;
-}
-
-/* 2. Notebook / Paintings Section */
-.tft-nb__container {
-  max-width: var(--site-container-max-width, 1560px) !important;
-  margin-inline: auto !important;
-  padding-inline: clamp(16px, 3.5vw, 48px) !important;
-  box-sizing: border-box !important;
-}
-
-/* 3. New Arrivals Section */
-body.tft-redesign-layout .tft-new-arrivals__container,
-.tft-new-arrivals__container {
-  max-width: var(--site-container-max-width, 1560px) !important;
-  margin-inline: auto !important;
-  padding-inline: clamp(16px, 3.5vw, 48px) !important;
-  box-sizing: border-box !important;
-}
-
-/* 4. Room Curator / Journal / UGC Lookbook Sections */
-.tft-room-curator__container,
-.tft-journal__container,
-.tft-ugc__container,
-.fur-planner__container,
-.fur-configurator__container,
-.fur-cta-banner__container {
-  max-width: var(--site-container-max-width, 1560px) !important;
-  margin-inline: auto !important;
-  box-sizing: border-box !important;
-}
-
-/* 5. Footer Containers */
-.tft-footer__container,
-.tft-footer__upper,
-.tft-footer__lower-container {
-  max-width: var(--site-container-max-width, 1560px) !important;
-  margin-inline: auto !important;
-  box-sizing: border-box !important;
-}
-
-/* Responsive side gutter adjustments */
-@media (max-width: 1600px) {
-  .tft-footer__upper {
-    margin-inline: clamp(12px, 2vw, 32px) !important;
   }
 }

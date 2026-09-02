@@ -48,6 +48,11 @@
       
       const temp = document.createElement('div');
       temp.innerHTML = html.trim();
+
+      // Extract <script> tags so they can be re-executed after DOM insertion
+      // (innerHTML does NOT run scripts; we must recreate them manually)
+      const scripts = Array.from(temp.querySelectorAll('script'));
+      scripts.forEach(s => s.parentNode.removeChild(s));
       
       const fragment = document.createDocumentFragment();
       while (temp.firstChild) {
@@ -55,6 +60,16 @@
       }
       
       parent.replaceChild(fragment, el);
+
+      // Re-execute extracted scripts
+      scripts.forEach(function (oldScript) {
+        const newScript = document.createElement('script');
+        Array.from(oldScript.attributes).forEach(function (attr) {
+          newScript.setAttribute(attr.name, attr.value);
+        });
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+      });
     },
 
     init: function () {

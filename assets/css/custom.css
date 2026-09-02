@@ -1,0 +1,620 @@
+/* ============================================================
+   custom.css – Simple Responsive Header + Full-Screen Slider
+   Khazana Stores  |  Do NOT touch Mega-Menu CSS / JS
+   ============================================================ */
+
+/* ---------- Hide legacy elements replaced by new header ---------- */
+.tft-top-bar {
+  display: none !important;
+}
+
+.tft-hero-split {
+  display: none !important;
+}
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --sh-bg-sticky: #f3f0ec;
+  /* rich dark-brown primary */
+  --sh-text: #ffffff;
+  --sh-accent: #000;
+  /* warm gold accent */
+  --sh-font: 'Plus Jakarta Sans', 'Playfair Display', sans-serif;
+  --sh-transition: background-color 0.35s ease, box-shadow 0.35s ease;
+
+  /* ── Utility colour tokens (easy per-slide overrides) ── */
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+/* ============================================================
+   UTILITY COLOUR CLASSES
+   Usage examples:
+     Text  : class="txt-white"  |  class="txt-black"
+     Bg    : class="bg-white"   |  class="bg-black"
+   ============================================================ */
+
+/* Text colours */
+.txt-white {
+  color: var(--color-white) !important;
+}
+
+.txt-black {
+  color: var(--color-black) !important;
+}
+
+/* Background colours */
+.bg-white {
+  background-color: var(--color-white) !important;
+}
+
+.bg-black {
+  background-color: var(--color-black) !important;
+}
+
+/* ---------- Remove body padding – hero fills viewport from top ---------- */
+.fur-body {
+  padding-top: 0 !important;
+}
+
+/* ============================================================
+   HEADER SHELL
+   ============================================================ */
+.simple-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: transparent;
+  transition: var(--sh-transition);
+}
+
+.simple-header.is-sticky {
+  background: var(--sh-bg-sticky);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ── When sticky: switch text + icons from white → dark gray ── */
+.simple-header.is-sticky .sh-nav-list li a {
+  color: #444;
+}
+
+.simple-header.is-sticky .sh-nav-list li a:hover {
+  color: var(--sh-accent);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.simple-header.is-sticky .sh-icon-btn {
+  color: #444;
+}
+
+.simple-header.is-sticky .sh-icon-btn:hover {
+  color: var(--sh-accent);
+}
+
+.simple-header.is-sticky .sh-burger {
+  color: #444;
+}
+
+.simple-header.is-sticky .sh-nav-row {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================================
+   ROW 1 – Logo only
+   Desktop : logo centered
+   Mobile  : logo left, actions right
+   ============================================================ */
+.sh-top-row {
+  display: flex;
+  justify-content: center;
+  /* center logo on desktop */
+  align-items: center;
+  padding: 10px 2rem;
+  /* 20px top + 20px bottom as requested */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.sh-logo {
+  display: flex;
+  align-items: center;
+}
+
+.sh-logo img {
+  height: 70px;
+  /* 70px as requested */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Mobile right group: hidden on desktop */
+.sh-mobile-right {
+  display: none;
+}
+
+/* ============================================================
+   ROW 2 – Nav links (centered) + Icons (right)
+   Desktop only – hidden on mobile
+   ============================================================ */
+.sh-nav-row {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  height: 46px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  box-sizing: border-box;
+}
+
+/* Nav list fills remaining space and centers its items */
+.sh-nav-list {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.15rem;
+  flex-wrap: nowrap;
+}
+
+.sh-nav-list li a {
+  display: block;
+  color: var(--sh-text);
+  text-decoration: none;
+  font-family: var(--sh-font);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+
+.sh-nav-list li a:hover {
+  color: var(--sh-accent);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Icons on the right of the nav row */
+.sh-nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-shrink: 0;
+  margin-left: 1.5rem;
+}
+
+/* ============================================================
+   ICON BUTTONS (shared: nav row + mobile row)
+   ============================================================ */
+.sh-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--sh-text);
+  cursor: pointer;
+  padding: 4px;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.sh-icon-btn:hover {
+  color: var(--sh-accent);
+  transform: scale(1.12);
+}
+
+.sh-icon-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Cart badge */
+.sh-cart-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: var(--sh-accent);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ============================================================
+   BURGER (mobile only – inside .sh-mobile-right)
+   ============================================================ */
+.sh-burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--sh-text);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.sh-burger svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* ============================================================
+   MOBILE OVERLAY + SLIDE-IN DRAWER
+   ============================================================ */
+.sh-mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 9998;
+}
+
+.sh-mobile-overlay.active {
+  display: block;
+}
+
+.sh-mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -290px;
+  width: 290px;
+  height: 100%;
+  background: var(--sh-bg-sticky);
+  z-index: 10000;
+  transition: right 0.32s ease;
+  padding: 3.5rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: -4px 0 28px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+}
+
+.sh-mobile-drawer.open {
+  right: 0;
+}
+
+.sh-mobile-drawer__links {
+  display: flex;
+  flex-direction: column;
+}
+
+.sh-mobile-drawer__links a {
+  color: #222222;
+  text-decoration: none;
+  font-family: var(--sh-font);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: block;
+  transition: color 0.2s, padding-left 0.2s;
+}
+
+.sh-mobile-drawer__links a:hover {
+  color: var(--sh-accent, #000);
+  padding-left: 6px;
+}
+
+.sh-drawer-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: transparent;
+  border: none;
+  color: #222222;
+  cursor: pointer;
+  font-size: 1.8rem;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.sh-drawer-close:hover {
+  opacity: 1;
+  color: var(--sh-accent, #000);
+}
+
+/* ── Mobile Drawer Social Links ── */
+.sh-mobile-drawer__social {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sh-mobile-drawer__social-title {
+  font-family: var(--sh-font);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #777777;
+}
+
+.sh-mobile-drawer__social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sh-mobile-drawer__social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  color: #333333;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.sh-mobile-drawer__social-links a:hover {
+  background: #222222;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Tablet (max 900px) */
+@media (max-width: 900px) {
+
+  /* Switch top row to: logo left, mobile-right to the right */
+  .sh-top-row {
+    justify-content: space-between;
+    padding: 14px 1.25rem;
+  }
+
+  /* Logo on left – no transform needed, flex handles it */
+  .sh-logo img {
+    height: 52px;
+  }
+
+  /* Show mobile-right group */
+  .sh-mobile-right {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  /* Hide desktop nav row entirely */
+  .sh-nav-row {
+    display: none;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .sh-top-row {
+    padding: 12px 1rem;
+  }
+
+  .sh-logo img {
+    height: 44px;
+  }
+
+  .sh-mobile-right {
+    gap: 0.6rem;
+  }
+}
+
+/* ============================================================
+   HERO FULL-SCREEN SLIDER
+   ============================================================ */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+/* ── Individual slide ── */
+.hero-slider__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* JS-driven active state */
+.hero-slider__slide.hs-active {
+  z-index: 2;
+}
+
+/* Dark gradient overlay so text is always readable */
+.hero-slider__slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.28) 0%,
+      rgba(0, 0, 0, 0.18) 40%,
+      rgba(0, 0, 0, 0.50) 100%);
+  z-index: 1;
+}
+
+/* ── Slide text content (centered) ── */
+.hero-slider__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 1.5rem;
+  max-width: 720px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s;
+}
+
+.hero-slider__slide.hs-active .hero-slider__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Category label – 12px */
+.hero-slider__category {
+  display: inline-block;
+  font-family: var(--sh-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-white, #ffffff);
+  /* change to --color-black for dark images */
+  margin-bottom: 10px;
+}
+
+/* Title – 15px bottom margin */
+.hero-slider__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 15px 0;
+  /* 15px bottom margin as requested */
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* CTA button */
+.hero-slider__cta {
+  display: inline-block;
+  padding: 0.65rem 2rem;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  color: #fff;
+  font-family: var(--sh-font);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+
+.hero-slider__cta:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #222;
+}
+
+/* ── Dots – bottom center, 10px bottom margin ── */
+.hero-slider__dots {
+  position: absolute;
+  bottom: 10px;
+  /* 10px bottom margin as requested */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.hero-slider__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s, border-color 0.3s;
+}
+
+.hero-slider__dot.hero-slider__dot--active {
+  background: #fff;
+  border-color: #fff;
+  transform: scale(1.3);
+}
+
+.hero-slider__dot:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Responsive: ensure 100% width on all screen sizes ── */
+@media (max-width: 900px) {
+  .hero-slider {
+    width: 100vw;
+    height: 70vh;
+    min-height: 380px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero-slider__title {
+    font-size: clamp(1.4rem, 6vw, 2.2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slider {
+    height: 60vh;
+    min-height: 320px;
+  }
+
+  .hero-slider__category {
+    font-size: 11px;
+  }
+
+  .hero-slider__cta {
+    font-size: 0.75rem;
+    padding: 0.55rem 1.5rem;
+  }
+}
+
+/* Remove CSS-only animation (JS now controls transitions) */
+@keyframes kzSlideFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

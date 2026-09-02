@@ -1,0 +1,134 @@
+<!-- ============================================================
+     fullscreen-slider.html  –  Khazana Stores
+     Full-screen hero slider: 3 slides, center text, dot nav
+     ============================================================ -->
+
+<section class="hero-slider" id="heroSlider">
+
+  <!-- Slide 1 -->
+  <div class="hero-slider__slide" style="background-image: url('assets/img/slider-01.jpg');">
+    <div class="hero-slider__content">
+      <span class="hero-slider__category">New Collection</span>
+      <h2 class="hero-slider__title">Handcrafted Brass<br>Art &amp; Gifts</h2>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="hero-slider__slide" style="background-image: url('assets/img/slider-02.jpg');">
+    <div class="hero-slider__content">
+      <span class="hero-slider__category">Premium Decor</span>
+      <h2 class="hero-slider__title">Timeless Ceramic<br>Vases &amp; Tea Sets</h2>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="hero-slider__slide" style="background-image: url('assets/img/slider-03.jpg');">
+    <div class="hero-slider__content">
+      <span class="hero-slider__category">Artisan Crafts</span>
+      <h2 class="hero-slider__title">Elegant Wooden<br>Products &amp; Sculptures</h2>
+    </div>
+  </div>
+
+  <!-- Dots navigation -->
+  <div class="hero-slider__dots" id="sliderDots">
+    <button class="hero-slider__dot hero-slider__dot--active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="hero-slider__dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="hero-slider__dot" data-slide="2" aria-label="Slide 3"></button>
+  </div>
+
+</section>
+
+<script>
+  (function () {
+    'use strict';
+
+    var SLIDE_DURATION = 5000; // ms per slide (must match CSS animation delay * 1000)
+    var TOTAL_SLIDES = 3;
+    var current = 0;
+    var timer;
+
+    var slider = document.getElementById('heroSlider');
+    if (!slider) return;
+
+    var slides = slider.querySelectorAll('.hero-slider__slide');
+    var dots = slider.querySelectorAll('.hero-slider__dot');
+
+    /* -- Activate slide and matching dot -- */
+    function goTo(index) {
+      // Remove active from all
+      slides.forEach(function (s) { s.classList.remove('hs-active'); });
+      dots.forEach(function (d) { d.classList.remove('hero-slider__dot--active'); });
+
+      current = (index + TOTAL_SLIDES) % TOTAL_SLIDES;
+
+      slides[current].classList.add('hs-active');
+      dots[current].classList.add('hero-slider__dot--active');
+    }
+
+    /* -- Auto-advance -- */
+    function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(function () {
+        goTo(current + 1);
+      }, SLIDE_DURATION);
+    }
+
+    /* -- Dot click -- */
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        goTo(parseInt(dot.getAttribute('data-slide'), 10));
+        startTimer(); // reset timer on manual click
+      });
+    });
+
+    /* -- Init: override CSS-only animation with JS-driven active class -- */
+    // Remove the CSS animation from slides (JS controls display now)
+    slides.forEach(function (s) {
+      s.style.animation = 'none';
+      s.style.opacity = '0';
+      s.style.transform = 'scale(1)';
+    });
+
+    goTo(0);
+    startTimer();
+
+    /* -- Ken-Burns effect on active slide -- */
+    function applyKenBurns(slideEl) {
+      slideEl.style.transition = 'none';
+      slideEl.style.transform = 'scale(1.04)';
+      slideEl.style.opacity = '0';
+
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          slideEl.style.transition = 'opacity 0.9s ease, transform ' + (SLIDE_DURATION / 1000) + 's ease';
+          slideEl.style.opacity = '1';
+          slideEl.style.transform = 'scale(1)';
+        });
+      });
+    }
+
+    /* -- Extend goTo with animation -- */
+    var _goTo = goTo;
+    goTo = function (index) {
+      // Fade out all
+      slides.forEach(function (s) {
+        s.style.transition = 'opacity 0.5s ease';
+        s.style.opacity = '0';
+        s.style.transform = 'scale(1)';
+        s.classList.remove('hs-active');
+      });
+      dots.forEach(function (d) { d.classList.remove('hero-slider__dot--active'); });
+
+      current = (index + TOTAL_SLIDES) % TOTAL_SLIDES;
+      dots[current].classList.add('hero-slider__dot--active');
+
+      var activeSlide = slides[current];
+      activeSlide.classList.add('hs-active');
+      applyKenBurns(activeSlide);
+    };
+
+    // Re-init with proper goTo
+    goTo(0);
+    startTimer();
+  })();
+</script>

@@ -7,32 +7,32 @@
      DESIGN TOKENS (PALETTE & BASE METRICS)
      ------------------------------------------------------------------------ */
   /* Light Theme Reference Colors */
-  --fur-ref-beige-50: hsl(36, 30%, 98%);
-  --fur-ref-beige-100: hsl(36, 24%, 94%);
-  --fur-ref-beige-200: hsl(36, 18%, 88%);
-  --fur-ref-beige-300: hsl(36, 12%, 80%);
-  --fur-ref-green-900: hsl(0, 0%, 25%);
-  --fur-ref-green-800: hsl(88, 38%, 26%);
-  --fur-ref-green-700: hsl(88, 38%, 32%);
-  --fur-ref-green-100: hsl(88, 20%, 90%);
-  --fur-ref-charcoal: hsl(0, 0%, 11%);
-  --fur-ref-grey-500: hsl(0, 0%, 45%);
-  --fur-ref-grey-200: hsl(0, 0%, 85%);
-  --fur-ref-white: hsl(0, 0%, 100%);
-  --fur-ref-overlay-light: hsla(0, 0%, 0%, 0.12);
+  --fur-ref-beige-50: #fbfaf8;
+  --fur-ref-beige-100: #f3f0ec;
+  --fur-ref-beige-200: #e6e2db;
+  --fur-ref-beige-300: #d2cdc6;
+  --fur-ref-green-900: #404040;
+  --fur-ref-green-800: #445b29;
+  --fur-ref-green-700: #547133;
+  --fur-ref-green-100: #e6ebe0;
+  --fur-ref-charcoal: #1c1c1c;
+  --fur-ref-grey-500: #737373;
+  --fur-ref-grey-200: #d9d9d9;
+  --fur-ref-white: #ffffff;
+  --fur-ref-overlay-light: rgba(0, 0, 0, 0.12);
 
   /* Forest Dark Theme Reference Colors */
-  --fur-ref-forest-950: hsl(126, 34%, 5%);
-  --fur-ref-forest-900: hsl(126, 34%, 8%);
-  --fur-ref-forest-800: hsl(125, 22%, 12%);
-  --fur-ref-forest-700: hsl(125, 18%, 18%);
-  --fur-ref-forest-600: hsl(125, 15%, 25%);
-  --fur-ref-olive-500: hsl(88, 36%, 31%);
-  --fur-ref-lime-400: hsl(88, 44%, 50%);
-  --fur-ref-lime-500: hsl(88, 44%, 44%);
-  --fur-ref-beige-dark: hsl(36, 20%, 90%);
-  --fur-ref-beige-dark-muted: hsl(38, 10%, 74%);
-  --fur-ref-overlay-dark: hsla(0, 0%, 0%, 0.45);
+  --fur-ref-forest-950: #081109;
+  --fur-ref-forest-900: #0d1b0f;
+  --fur-ref-forest-800: #182519;
+  --fur-ref-forest-700: #263627;
+  --fur-ref-forest-600: #364938;
+  --fur-ref-olive-500: #516c33;
+  --fur-ref-lime-400: #83b847;
+  --fur-ref-lime-500: #73a23f;
+  --fur-ref-beige-dark: #ebe7e0;
+  --fur-ref-beige-dark-muted: #c3beb6;
+  --fur-ref-overlay-dark: rgba(0, 0, 0, 0.45);
 
   /* Fonts */
   --fur-font-serif: 'Playfair Display', Georgia, serif;
@@ -72,8 +72,8 @@
   --fur-sidebar-card-bg: var(--fur-ref-beige-100);
 
   --fur-hero-overlay: var(--fur-ref-overlay-light);
-  --fur-shadow: hsla(0, 0%, 0%, 0.04);
-  --fur-shadow-lg: hsla(0, 0%, 0%, 0.12);
+  --fur-shadow: rgba(0, 0, 0, 0.04);
+  --fur-shadow-lg: rgba(0, 0, 0, 0.12);
 
   --fur-card-bg: var(--fur-ref-white);
   --fur-button-text: var(--fur-ref-white);

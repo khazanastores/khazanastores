@@ -1,0 +1,202 @@
+<!-- ============================================================
+     simple-header.html  –  Khazana Stores
+     Row 1 : Logo only (centered, 70px, 20px top+bottom)
+     Row 2 : Nav links (centered) + 3 icons on right
+     Mobile : Logo left  |  Icons + Burger right
+     ============================================================ -->
+
+<header class="simple-header" id="simpleHeader">
+
+  <!-- ── ROW 1: Logo only (desktop center / mobile left) ── -->
+  <div class="sh-top-row">
+
+    <div class="sh-logo">
+      <a href="index.html" aria-label="Khazana Stores Home">
+        <img src="assets/img/logo.jpg" alt="Khazana Stores" />
+      </a>
+    </div>
+
+    <!-- Mobile-only right side: icons + burger -->
+    <div class="sh-mobile-right">
+
+      <!-- Favourite (mobile) – links to wishlist page same as original header -->
+      <a href="shop.html?wishlist=true" class="sh-icon-btn" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </a>
+
+      <!-- Account (mobile) – data-action triggers main.js delegated listener -->
+      <a href="#" class="sh-icon-btn" aria-label="My Account" data-action="open-account">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
+
+      <!-- Cart (mobile) – data-action triggers main.js delegated listener -->
+      <a href="#" class="sh-icon-btn" aria-label="Shopping Cart" data-action="open-cart">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="9" cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="sh-cart-badge sh-cart-count">0</span>
+      </a>
+
+      <!-- Burger -->
+      <button class="sh-burger" id="sh-burger-btn" aria-label="Open Menu">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ── ROW 2: Nav links (centered) + Icons on right (desktop only) ── -->
+  <nav class="sh-nav-row" aria-label="Main Navigation">
+    <ul class="sh-nav-list">
+      <li><a href="#">New Arrival</a></li>
+      <li><a href="#">Brass Gifts</a></li>
+      <li><a href="#">Brass Sculptures</a></li>
+      <li><a href="#">Candle Holders</a></li>
+      <li><a href="#">Ceramic Gifts</a></li>
+      <li><a href="#">Ceramic Vases</a></li>
+      <li><a href="#">Ceramic Tea Sets</a></li>
+      <li><a href="#">Wooden Products</a></li>
+    </ul>
+
+    <!-- Icons on the right end of nav row (desktop) -->
+    <div class="sh-nav-icons">
+
+      <!-- Favourite – same as original header: links to wishlist page -->
+      <a href="shop.html?wishlist=true" class="sh-icon-btn" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </a>
+
+      <!-- Account – data-action picked up by main.js event delegation -->
+      <a href="#" class="sh-icon-btn" aria-label="My Account" data-action="open-account">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
+
+      <!-- Cart – data-action picked up by main.js event delegation -->
+      <a href="#" class="sh-icon-btn" aria-label="Shopping Cart" data-action="open-cart">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="9" cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="sh-cart-badge sh-cart-count">0</span>
+      </a>
+
+    </div>
+  </nav>
+
+</header>
+
+<!-- ── Mobile Overlay ── -->
+<div class="sh-mobile-overlay" id="sh-mobile-overlay"></div>
+
+<!-- ── Mobile Slide-in Drawer ── -->
+<div class="sh-mobile-drawer" id="sh-mobile-drawer">
+  <button class="sh-drawer-close" id="sh-drawer-close" aria-label="Close Menu">&times;</button>
+  <div class="sh-mobile-drawer__links">
+    <a href="#">New Arrival</a>
+    <a href="#">Brass Gifts</a>
+    <a href="#">Brass Sculptures</a>
+    <a href="#">Candle Holders</a>
+    <a href="#">Ceramic Gifts</a>
+    <a href="#">Ceramic Vases</a>
+    <a href="#">Ceramic Tea Sets</a>
+    <a href="#">Wooden Products</a>
+  </div>
+
+  <!-- Social media section at bottom of menu -->
+  <div class="sh-mobile-drawer__social">
+    <span class="sh-mobile-drawer__social-title">Follow Us</span>
+    <div class="sh-mobile-drawer__social-links">
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+        </svg>
+      </a>
+      <a href="https://pinterest.com" target="_blank" rel="noopener" aria-label="Pinterest">
+        <svg width="16" height="16" viewBox="0 0 384 512" fill="currentColor">
+          <path d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"/>
+        </svg>
+      </a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Sticky + Burger JS (self-contained, runs after module inject) ── -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Sticky on scroll ── */
+  var header = document.getElementById('simpleHeader');
+  if (header) {
+    window.addEventListener('scroll', function () {
+      header.classList.toggle('is-sticky', window.scrollY > 60);
+    }, { passive: true });
+  }
+
+  /* ── Mobile burger drawer ── */
+  var burger   = document.getElementById('sh-burger-btn');
+  var drawer   = document.getElementById('sh-mobile-drawer');
+  var overlay  = document.getElementById('sh-mobile-overlay');
+  var closeBtn = document.getElementById('sh-drawer-close');
+
+  function openDrawer()  {
+    if (drawer)  drawer.classList.add('open');
+    if (overlay) overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    if (drawer)  drawer.classList.remove('open');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  if (burger)   burger.addEventListener('click', openDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if (overlay)  overlay.addEventListener('click', closeDrawer);
+
+  /* ── Sync cart counts ── */
+  function syncCartCount() {
+    var existing = document.querySelector('.tft-top-bar__cart-count, .fur-header-cart__count');
+    var badges   = document.querySelectorAll('.sh-cart-count');
+    if (existing) {
+      badges.forEach(function(b){ b.textContent = existing.textContent || '0'; });
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', syncCartCount);
+  } else {
+    syncCartCount();
+  }
+})();
+</script>
